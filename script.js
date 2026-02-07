@@ -32,7 +32,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Add scroll effect to navbar
-    let lastScroll = 0;
     const navbar = document.querySelector('.navbar');
 
     window.addEventListener('scroll', function() {
@@ -43,8 +42,6 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             navbar.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)';
         }
-        
-        lastScroll = currentScroll;
     });
 
     // Intersection Observer for fade-in animations
