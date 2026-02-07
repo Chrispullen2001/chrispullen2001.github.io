@@ -21,7 +21,7 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     line-height: 1.6;
     color: var(--text-primary);
-    background-color: var(--bg-white);
+    background-color: var(--bg-light);
 }
 
 .container {
@@ -97,10 +97,11 @@ body {
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-    color: white;
+    background-color: var(--secondary-color);
+    color: var(--text-primary);
     padding: 8rem 0;
     text-align: center;
+    border-bottom: 1px solid var(--border-color);
 }
 
 .hero-title {
@@ -110,8 +111,9 @@ body {
 }
 
 .highlight {
-    color: #fbbf24;
+    color: var(--primary-color);
 }
+
 
 .hero-subtitle {
     font-size: 1.5rem;
@@ -136,24 +138,29 @@ body {
 }
 
 .btn-primary {
-    background-color: white;
-    color: var(--primary-color);
+    background-color: var(--primary-color);
+    color: #ffffff;
+    border: 1px solid var(--primary-color);
 }
 
 .btn-primary:hover {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
     transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.35);
 }
+
 
 .btn-secondary {
     background-color: transparent;
-    color: white;
-    border: 2px solid white;
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
 }
 
 .btn-secondary:hover {
-    background-color: white;
+    border-color: var(--primary-color);
     color: var(--primary-color);
+    background-color: rgba(177, 18, 38, 0.08);
 }
 
 /* About Section */
@@ -188,13 +195,15 @@ body {
     background-color: var(--bg-white);
     border-radius: 1rem;
     padding: 2rem;
+    border: 1px solid var(--border-color);
     box-shadow: var(--shadow);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+
 .project-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.45);
 }
 
 .project-icon {
@@ -351,11 +360,13 @@ body {
 
 /* Footer */
 .footer {
-    background-color: var(--text-primary);
-    color: white;
+    background-color: var(--secondary-color);
+    color: var(--text-secondary);
     text-align: center;
     padding: 2rem 0;
+    border-top: 1px solid var(--border-color);
 }
+
 
 .footer p {
     opacity: 0.8;
