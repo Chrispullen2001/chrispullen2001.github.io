@@ -67,12 +67,20 @@
             border-radius: 8px;
             overflow: hidden;
             aspect-ratio: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-            color: var(--primary-color);
             transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery-caption {
+            margin-top: 0.75rem;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
         }
 
         .gallery-item:hover {
@@ -236,6 +244,9 @@
                     print strategy optimization for visual quality and structural integrity, and coordinated post-processing to meet 
                     exacting aesthetic and functional requirements at scale—all while maintaining production quality and deadline adherence.
                 </p>
+                <p style="margin-top: 1rem; color: var(--text-secondary);">
+                    <strong>Key Achievement:</strong> Successfully delivered production-grade deliverable under aggressive sub-one-week timeline while managing rapid design iteration, complex post-processing, and full client satisfaction on first delivery.
+                </p>
             </div>
         </div>
 
@@ -243,18 +254,27 @@
         <div class="project-section">
             <h2>Project Gallery</h2>
             <p style="margin-bottom: 1.5rem; color: var(--text-secondary);">
-                Final product photos and CAD renderings coming soon. <a href="mailto:fivepullens@gmail.com" style="color: var(--primary-color);">Contact me</a> for project portfolio access!
+                Placeholder visuals below are mapped to design, print, and delivery milestones. Replace with final campaign photos and process shots.
             </p>
             <div class="project-gallery">
-                <div class="gallery-item">
-                    <i class="fas fa-cube"></i>
-                </div>
-                <div class="gallery-item">
-                    <i class="fas fa-print"></i>
-                </div>
-                <div class="gallery-item">
-                    <i class="fas fa-gears"></i>
-                </div>
+                <figure>
+                    <div class="gallery-item">
+                        <img src="../assets/photos/manufacturing-pendant.svg" alt="Mascot-scale chain and pendant concept render">
+                    </div>
+                    <figcaption class="gallery-caption">Design context: initial concept and geometry for mascot-scale pendant.</figcaption>
+                </figure>
+                <figure>
+                    <div class="gallery-item">
+                        <img src="../assets/photos/manufacturing-print-farm.svg" alt="3D print farm workflow for commercial deadline">
+                    </div>
+                    <figcaption class="gallery-caption">Production context: print farm scheduling and quality-controlled fabrication.</figcaption>
+                </figure>
+                <figure>
+                    <div class="gallery-item">
+                        <img src="../assets/photos/manufacturing-pendant.svg" alt="Final finished pendant and chain assembly">
+                    </div>
+                    <figcaption class="gallery-caption">Delivery context: final assembly prepared for campaign use.</figcaption>
+                </figure>
             </div>
         </div>
 
@@ -370,6 +390,14 @@
                 Need custom manufacturing, rapid prototyping, or production engineering expertise? Let's discuss your project requirements.
             </p>
             <a href="mailto:fivepullens@gmail.com" class="btn btn-primary">Get In Touch</a>
+        </div>
+
+        <div class="project-section">
+            <h2>Source Document</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+                Professional context and quantified outcomes for this project are derived from the resume source document.
+            </p>
+            <a href="../assets/PDFs/Pullen_Chris_Resume.pdf" class="project-link" target="_blank">Open Resume PDF <i class="fas fa-arrow-right"></i></a>
         </div>
     </main>
 

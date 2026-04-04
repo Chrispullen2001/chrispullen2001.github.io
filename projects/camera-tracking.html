@@ -67,12 +67,20 @@
             border-radius: 8px;
             overflow: hidden;
             aspect-ratio: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-            color: var(--primary-color);
             transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery-caption {
+            margin-top: 0.75rem;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
         }
 
         .gallery-item:hover {
@@ -195,6 +203,9 @@
                     The project demonstrates comprehensive systems engineering: a belt-driven gantry mechanism enables smooth linear motion, real-time motor control manages positioning, 
                     and OpenCV-based vision algorithms track subjects dynamically. All subsystems are orchestrated through ROS2, creating a modular, scalable platform for research and data acquisition.
                 </p>
+                <p style="margin-top: 1rem; color: var(--text-secondary);">
+                    <strong>Key Achievement:</strong> Designed and commissioned a complete closed-loop system integrating mechanical design, motor sizing, controls, and real-time vision tracking. Validated system performance through structured testing and comprehensive data analysis.
+                </p>
             </div>
         </div>
 
@@ -202,18 +213,27 @@
         <div class="project-section">
             <h2>Project Gallery</h2>
             <p style="margin-bottom: 1.5rem; color: var(--text-secondary);">
-                Photos and CAD renderings coming soon. Check back or <a href="mailto:fivepullens@gmail.com" style="color: var(--primary-color);">reach out</a> for details!
+                Placeholders below map to system build stages; swap in your capstone photos and CAD screenshots directly to keep this layout.
             </p>
             <div class="project-gallery">
-                <div class="gallery-item">
-                    <i class="fas fa-camera"></i>
-                </div>
-                <div class="gallery-item">
-                    <i class="fas fa-cogs"></i>
-                </div>
-                <div class="gallery-item">
-                    <i class="fas fa-chart-line"></i>
-                </div>
+                <figure>
+                    <div class="gallery-item">
+                        <img src="../assets/photos/camera-system.svg" alt="Mechanical gantry and camera carriage for tracking system">
+                    </div>
+                    <figcaption class="gallery-caption">Hardware context: belt-driven gantry and camera carriage assembly.</figcaption>
+                </figure>
+                <figure>
+                    <div class="gallery-item">
+                        <img src="../assets/photos/camera-ros-opencv.svg" alt="ROS2 and OpenCV control pipeline architecture">
+                    </div>
+                    <figcaption class="gallery-caption">Software context: OpenCV detection feeding ROS2 motion control loop.</figcaption>
+                </figure>
+                <figure>
+                    <div class="gallery-item">
+                        <img src="../assets/photos/camera-system.svg" alt="Testing setup for high-speed tracking and motion capture">
+                    </div>
+                    <figcaption class="gallery-caption">Validation context: placeholder slot for test rig and capture dataset visuals.</figcaption>
+                </figure>
             </div>
         </div>
 
@@ -250,6 +270,75 @@
                 <li><strong style="color: white;">Vision Processing:</strong> Real-time OpenCV algorithms for subject detection, tracking, and frame synchronization</li>
                 <li><strong style="color: white;">Communication:</strong> ROS2 middleware enabling scalable node-based architecture and real-time data streaming</li>
             </ul>
+        </div>
+
+        <div class="project-section">
+            <h2>Verified Test Results (Capstone Deck)</h2>
+            <p style="margin-bottom: 1rem; color: var(--text-secondary);">
+                These results are pulled from the Team 2 final presentation test protocol.
+            </p>
+            <p><strong>Velocity Test Method:</strong> 1 meter marked travel path, 240 FPS recording, 40% motor speed, 3 trials.</p>
+            <table style="width: 100%; margin: 1rem 0 1.5rem 0; border-collapse: collapse;">
+                <tr style="background: var(--bg-light);">
+                    <th style="padding: 0.75rem; text-align: left; border: 1px solid var(--border-color);">Trial</th>
+                    <th style="padding: 0.75rem; text-align: left; border: 1px solid var(--border-color);">Frames</th>
+                    <th style="padding: 0.75rem; text-align: left; border: 1px solid var(--border-color);">Speed (m/s)</th>
+                </tr>
+                <tr>
+                    <td style="padding: 0.75rem; border: 1px solid var(--border-color);">1</td>
+                    <td style="padding: 0.75rem; border: 1px solid var(--border-color);">40</td>
+                    <td style="padding: 0.75rem; border: 1px solid var(--border-color);">6.0</td>
+                </tr>
+                <tr>
+                    <td style="padding: 0.75rem; border: 1px solid var(--border-color);">2</td>
+                    <td style="padding: 0.75rem; border: 1px solid var(--border-color);">38</td>
+                    <td style="padding: 0.75rem; border: 1px solid var(--border-color);">6.3</td>
+                </tr>
+                <tr>
+                    <td style="padding: 0.75rem; border: 1px solid var(--border-color);">3</td>
+                    <td style="padding: 0.75rem; border: 1px solid var(--border-color);">48</td>
+                    <td style="padding: 0.75rem; border: 1px solid var(--border-color);">5.0</td>
+                </tr>
+                <tr style="font-weight: bold; background: var(--primary-color); color: white;">
+                    <td style="padding: 0.75rem; border: 1px solid var(--border-color);">Average</td>
+                    <td style="padding: 0.75rem; border: 1px solid var(--border-color);">42</td>
+                    <td style="padding: 0.75rem; border: 1px solid var(--border-color);">5.7</td>
+                </tr>
+            </table>
+            <p style="color: var(--text-secondary);">
+                <strong>Design target:</strong> 1.0 m/s minimum. <strong>Measured:</strong> 5.7 m/s average, approximately 5x design criteria.
+            </p>
+            <p style="margin-top: 0.75rem; color: var(--text-secondary);">
+                The same test package tracked additional criteria for acceleration (target 1 m/s^2), track length (&gt;3m), and ROS-based communication requirements.
+            </p>
+        </div>
+
+        <div class="project-section">
+            <h2>Budget Outcome (Capstone Deck)</h2>
+            <table style="width: 100%; margin: 1rem 0 1.5rem 0; border-collapse: collapse;">
+                <tr style="background: var(--bg-light);">
+                    <th style="padding: 0.75rem; text-align: left; border: 1px solid var(--border-color);">Subsystem</th>
+                    <th style="padding: 0.75rem; text-align: left; border: 1px solid var(--border-color);">Cost</th>
+                </tr>
+                <tr>
+                    <td style="padding: 0.75rem; border: 1px solid var(--border-color);">Frame & Track</td>
+                    <td style="padding: 0.75rem; border: 1px solid var(--border-color);">$833.16</td>
+                </tr>
+                <tr>
+                    <td style="padding: 0.75rem; border: 1px solid var(--border-color);">Motion System</td>
+                    <td style="padding: 0.75rem; border: 1px solid var(--border-color);">$60.80</td>
+                </tr>
+                <tr>
+                    <td style="padding: 0.75rem; border: 1px solid var(--border-color);">Electronics & Wiring</td>
+                    <td style="padding: 0.75rem; border: 1px solid var(--border-color);">$362.94</td>
+                </tr>
+            </table>
+            <p style="color: var(--text-secondary);">
+                <strong>Funding:</strong> $1,000 senior design budget + $420.62 advisor support = $1,420.62 total.
+            </p>
+            <p style="margin-top: 0.75rem; color: var(--text-secondary);">
+                <strong>Outcome:</strong> approximately $220 over estimated cost, with budget visibility captured through subsystem-level breakdowns and iterative procurement decisions.
+            </p>
         </div>
 
         <!-- Technology Stack -->
@@ -295,6 +384,24 @@
                 Solution: Reinforced frame geometry, upgraded bearing systems, and implemented soft-start acceleration profiles 
                 to minimize vibration while maintaining operational speed.
             </p>
+        </div>
+
+        <div class="project-section">
+            <h2>Next Steps From Final Presentation</h2>
+            <ul style="list-style-position: inside; line-height: 2; color: var(--text-secondary);">
+                <li>Increase structural stability via added cross-bracing between support beams</li>
+                <li>Upgrade mirror design for adjustable viewing angles</li>
+                <li>Refine bearing block design to reduce reliance on 3D printed parts</li>
+                <li>Enhance lighting for more accurate and repeatable video data capture</li>
+            </ul>
+        </div>
+
+        <div class="project-section">
+            <h2>Source Document</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+                This page incorporates data from the Team 2 Fall 2024 final presentation.
+            </p>
+            <a href="../assets/PDFs/Team2_Fa24_FinalPresentation.pdf" class="project-link" target="_blank">Open Full Presentation <i class="fas fa-arrow-right"></i></a>
         </div>
 
         <!-- Call to Action -->

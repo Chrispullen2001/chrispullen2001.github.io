@@ -1,0 +1,169 @@
+  
+College of Engineering  
+MEE 9995: Master’s Project 
+ 
+ 
+ 
+A Low-Cost Quadruped Robot Dog for K-12 STEM 
+Education 
+ 
+ 
+ 
+ 
+Studeny Name: Chris Pullen 
+Date Submitted: 12/04/2025 
+Advisor: Dr. Li Bai 
+  
+Introduction 
+A quadruped robot dog, Squeaky, was developed to address a signiﬁcant gap in K-12 
+education: the lack of aƯordable, durable and approachable robotic platforms. 
+Commercially available robot dogs often cost between $600 and $2000, making them far 
+beyond the budget of most schools, after-school programs, and families. As Program-
+Director at Coco Academy, a makerspace for kids based in South Philadelphia, the need for 
+low-cost hands-on robotic tools became clear.  Squeaky was created to meet this need, 
+providing both ﬁnancial accessibility and entry level capabilities for students of all ages. To 
+achieve this goal, the project was designed around four key requirements: maintaining a 
+total cost under $100, ensuring durability under rough handling, supporting easy assembly 
+and repair, and incorporating an intuitive custom block-based interface 
+Mechanical Design 
+The mechanical design of the robot dog focused on strength and ease of repair. The robot 
+used an eight-degree-of-freedom conﬁguration with two MG996R high-torque servos 
+attached to each leg to control the hip and knee joints. 
+ 
+Figure 1: A CAD Model of the Robot Dog 
+ An embedded servo leg architecture was chosen over a linkage-based leg design because 
+it reduces assembly complexity and simpliﬁes the inverse kinematics in the movement 
+logic. All structural parts were designed in Onshape, a browser-based CAD application, and 
+3D-printed in PLA due to its low cost and adequate stiƯness. Layer lines were intentionally 
+oriented to maximize strength and aluminum alloy servo attachments were added to the 
+joints to ensure a strong connection. To support ease of assembly and repair, the robot 
+uses only two screw types and features modular components that can be easily replaced 
+or customized.  
+Electrical Design  
+The electrical system was created to focus on real-time responsiveness, low cost and 
+simple integration. The Arduino Uno R4 Wi-Fi microcontroller was selected as the “brain” of 
+the robot due to its built-in ESP32-S3 wireless module and its aƯordability compared to 
+Raspberry Pi alternatives.  
+  
+Figure 2: A picture of the Arduino and breakboard used in the robot 
+The microcontroller is attached to a V5 sensor shield which is used as a breakout board to 
+easily attach all of the servos without complex wiring. Servos were chosen over DC or 
+stepper motors because they include internal potentiometer for position feedback and 
+consume less power. The electrical system is powered by a tethered power supply either to 
+a PC or a wall outlet which allows for easy debugging and no time requirement for charging. 
+The conﬁguration results in a simple but robust system that provides a wireless connection 
+while keeping cost to a minimum. 
+  
+Durability Testing 
+Durability was a central requirement throughout the design process as the robot must be 
+able to withstand impacts, drops and rough handling to allow for hours of endless learning. 
+Since most of the frame is 3D-printed, the structural integrity needs to be validated. Finite 
+Element Analysis (FEA) studies were conducted in SimScale on the upper and lower 
+portions of the leg as they are the most likely to be pulled or struck during use. In each 
+study, two trials were made by changing the force from 50N (~11lbs) to 100N (~22lbs). From 
+each trial, the highest Von Mises stress is found and using the Yield Strength of PLA, 40 
+MPa, the factor of safety is found. The ﬁrst study conducted focused on the upper leg 
+simulating a student squeezing the legs inwards. 
+ 
+Figure 3: Upper Leg, Distributed Load, FEA Model and Results Plot 
+A ﬁxed support was made at the servo connection, and the force was applied towards the 
+center of the dog on the outer face. The factor of safety from each trial was 11.9 and 5.96, 
+respectively. The next study also focused on the upper leg but had a point force directed at 
+the bottom of the part simulating bumping into a wall or falling oƯ a table.  
+  
+Figure 4: Upper Leg. Point load, FEA Model and Results Plot 
+A ﬁxed support was made at the servo connection, and the forces were applied as a point 
+load towards the servo connection at the bottom of the part. The factor of safety from each 
+trial was 29.7 and 14.9, respectively. The third study focused on the bottom lab with a 
+distributed load along the inner face simulating a study picking up the dog by the leg.  
+    
+Figure 5: Lower Leg, Distributed Load, FEA Model and Results Plot 
+A ﬁxed support was made at the servo connection, and the forces were applied outwards 
+to the inner face of the leg. The factor of safety for each trial was 3.56 and 1.78, 
+respectively. Since the factor of safety is lower than 2, there could be some structural 
+integrity issues that arise; however, since the force applied, 100N, exceeds that of normal 
+operational use, it is safe to assume that the leg will not break under normal use. The last 
+study focused on the lower leg but with a point contact at the bottom of the leg to simulate 
+the robot being dropped or falling oƯ a table.  
+ 
+Figure 6: Lower Leg, Point Contact, FEA Model and Results Plot 
+A ﬁxed support was placed at the servo connection, and a point contact was applied 
+towards the connection from the bottom of the leg. The factor of safety for each trial was 
+29.7 and 14.9, respectively. Across all simulations, the minimum factor of safety under 
+extreme conditions remained 1.78, conﬁrming that the 3D-printed structure provides 
+suƯicient durability for everyday classroom use. 
+  
+Control Logic 
+The control logic uses a set of inverse kinematic equations to control the precise 
+movement of the servos. First, the robot dog must undergo a calibration procedure in 
+which each servo is set to 90 degrees. Each servo must be adjusted until each limb is 
+perpendicular to each other. The adjusted neutral position is saved as a calibration oƯset 
+and later applied to all computer angles to ensure consistency in each step. The leg 
+mechanism is modeled as a two-link planar system and uses the known leg dimensions in 
+the inverse kinematics equations.     
+ 
+Figure 7: The Inverse Kinematic Calculations for the Leg model. 
+The inverse kinematic equations are implemented in C++ to compute the target angles for 
+each joint based on a desired foot position in the X-Y space.  
+ 
+Figure 8: Implemented Inverse Kinematics 
+Once computed, the Arduino applies the calibration oƯset and sends a ﬁnal angle 
+command to the servos. This approach enables smooth leg motion while keeping 
+computation demand low enough for the microcontroller.  
+  
+User Interface 
+To make the robot dog accessible for younger students, a custom drag-and-drop interface 
+was developed using a lightweight web-based architecture. The ESP32-S3 module on the 
+Arduino hosts a small HTTP server that serves an HTML-based control dashboard stored 
+directly in ﬂash memory. The user connects to the robot over Wi-Fi and can interact with a 
+scratch-style coding interface that allows them to control motion without text-based code. 
+The interface includes movement commands such as forward, backward, turning, sitting, 
+standing, as well as logical operators like loops and wait functions.  
+Figure 9: Custom Block-Based Interface 
+ This design prioritizes conceptual understanding of coding and algorithmic thinking which 
+reduces frustration associated with syntax errors. Students can rapidly prototype 
+sequences of movements and see immediate results, engaging and gamifying the learning 
+experience.  
+ 
+  
+Cost Analysis 
+A major design constraint was keeping the total material costs under $100. Through careful 
+selection of parts and using 3D-printed parts for the majority of the structure, the bill of 
+materials totals approximately $103 when sourced through major retail channels such as 
+Amazon.  
+Part Quantity Price % of Project Cost 
+Arduino 1 $29.15 28% 
+Power Supply 1 $7.84 7% 
+V5 Sensor Shield 1 $2.83 3% 
+MG996R Servos 8 $32.84 32% 
+Aluminum Servo 
+Attachments 
+8 $14.82 14% 
+3D Print Material 
+(PLA) 
+276 grams $8.28 8% 
+M3 Screws 1 Pack $7.99 8% 
+Total  $103.75  
+Costs can be further reduced through sourcing parts from wholesale suppliers such as 
+AliExpress or Alibaba which makes the sub-$100 target practical for bulk production. To 
+consider other potential costs during production such as manufacturing time, assembly 
+and packaging, a 2.5x markup can be applied to achieve a market comparison. The value of 
+a 2.5x markup was found to be a industry guideline for hardware products. Under this 
+model, a reasonable retail price would be approximately $260 which is still far below 
+competing quadruped kits on the market such as Petoi Bittle ($329) and Mangdang 
+Minipupper ($604). This cost structure positions this robot dog as one of the most 
+aƯordable robotic platforms available for K-12 education.  
+Conclusion 
+The quadruped robot dog successfully meets all the key requirements established at the 
+start of the project: aƯordability, durability, ease of assembly and repair, and compatibility 
+with a drag-and-drop coding system. By keeping the total material cost near the $100 
+target, the design addresses the need for ﬁnancially accessible robotic platforms in K-12 
+education. Durability through FEA demonstrated that the 3D-printed components will hold 
+up under rough handling from younger students. The modular mechanical structure, 
+simple screw selection, and easily replaceable parts ensure that users can maintain the 
+robot with minimal downtime. Lastly, the implementation of a wireless, self-contained, 
+block-based programming interface allows control of the robot without the frustration of 
+traditional syntax-based coding. With future improvements such as enhanced walking 
+algorithms, additional sensors, and expanded coding features, the robot dog has strong 
+potential to grow into a widely adopted educational tool that helps young students develop 
+engineering intuition and computational thinking skills.  

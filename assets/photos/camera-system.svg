@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-label="Camera tracking gantry placeholder">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#121212"/>
+      <stop offset="100%" stop-color="#8e0e1f"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#bg)"/>
+  <g fill="none" stroke="#eaeaea" stroke-width="14" opacity="0.9">
+    <line x1="150" y1="730" x2="1450" y2="730"/>
+    <rect x="260" y="400" width="1080" height="120" rx="20"/>
+    <rect x="720" y="360" width="160" height="220" rx="16"/>
+    <circle cx="800" cy="460" r="44"/>
+    <line x1="800" y1="580" x2="800" y2="730"/>
+  </g>
+  <text x="120" y="900" fill="#ffffff" font-family="Arial, sans-serif" font-size="56" font-weight="700">CLOSED-LOOP CAMERA TRACKING PLACEHOLDER</text>
+</svg>

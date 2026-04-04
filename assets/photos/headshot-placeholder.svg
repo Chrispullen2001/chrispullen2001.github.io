@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="900" viewBox="0 0 900 900" role="img" aria-label="Headshot placeholder">
+  <rect width="900" height="900" fill="#1c1c1c"/>
+  <circle cx="450" cy="340" r="150" fill="none" stroke="#eaeaea" stroke-width="14"/>
+  <path d="M190 730 C220 580, 680 580, 710 730" fill="none" stroke="#eaeaea" stroke-width="14"/>
+  <circle cx="450" cy="450" r="370" fill="none" stroke="#b11226" stroke-width="16"/>
+  <text x="145" y="840" fill="#ffffff" font-family="Arial, sans-serif" font-size="52" font-weight="700">YOUR HEADSHOT HERE</text>
+</svg>

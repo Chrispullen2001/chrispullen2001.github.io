@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-label="Print farm placeholder">
+  <rect width="1600" height="1000" fill="#1c1c1c"/>
+  <g fill="none" stroke="#eaeaea" stroke-width="9" opacity="0.9">
+    <rect x="140" y="230" width="390" height="500" rx="18"/>
+    <rect x="605" y="230" width="390" height="500" rx="18"/>
+    <rect x="1070" y="230" width="390" height="500" rx="18"/>
+    <rect x="220" y="320" width="230" height="280" rx="12"/>
+    <rect x="685" y="320" width="230" height="280" rx="12"/>
+    <rect x="1150" y="320" width="230" height="280" rx="12"/>
+  </g>
+  <text x="270" y="885" fill="#ffffff" font-family="Arial, sans-serif" font-size="56" font-weight="700">PRINT FARM OPERATIONS PLACEHOLDER</text>
+</svg>

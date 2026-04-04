@@ -1,0 +1,521 @@
+Christopher Pullen - Mechanical Engineer
+Darshan Patel - Mechanical Engineer
+Ryan Loc - Mechanical Engineer
+Fernanda Gutierrez - Bioengineer
+Andrew Spence - Advisor
+Hamid Heravi - Instructor
+CAMERA TRACKING 
+SYSTEM (RAT TRAK)
+Team 2
+S
+p
+e
+n
+c
+e
+ L
+o
+c
+o
+ L
+a
+b
+Team 2 | Camera Tracking System | 1
+Design Process, Solution 
+Considerations, Finalizing The Design
+ENGINEERING DESIGN PROCESS
+03
+INTRODUCTION
+Background, Needs 
+Statement, Problem01
+DESIGN CRITERIA
+Negotiables Vs. Non-
+negotiables02
+TESTING METHODS & RESULTS
+Prototype Testing, Analysis of Results, 
+and Goal Validation 04
+COST ANALYSIS
+Budget Analysis and Cost Breakdown05
+06
+IMPLICATIONS & NEXT STEPS
+Success Implications, Further 
+Applications and Next Steps
+Team 2 | Camera Tracking System | 2
+Requires large data 
+sets from freely 
+moving animals to 
+test treatments and 
+hypotheses
+Insights applicable 
+to medicine, 
+prosthetics and 
+rehabilitation 
+therapies
+LEGGED 
+LOCOMOTION 
+RESEARCH
+COMPLEXITY 
+OF 
+LOCOMOTION
+SPINAL CORD 
+INJURY 
+RECOVERY
+How the nervous 
+system controls 
+movement and 
+treatment for 
+neurological 
+disorders  
+BACKGROUND
+Team 2 | Camera Tracking System | 3
+PROBLEM
+• Find a way to get zoomed in video of fast -moving rats over many 
+continuous strides
+• Previous solutions only capture one or two strides as animal goes past, 
+or require many cameras and stitching of different views
+• Develop a new closed-loop system that puts the camera on a gantry 
+and keeps it focused on the animal, enabling large data sets of the 
+animal at all speeds, accelerating, decelerating
+Team 2 | Camera Tracking System | 4
+CURRENT TOOLS 
+Camera
+Entry 
+box
+Mirrors for 
+side profile 
+angles
+High 
+speed 
+camera
+Lighting
+Treadmill 
+with acrylic 
+cage
+Tracking 
+camera
+Team 2 | Camera Tracking System | 5
+There is a need for developing an improved 
+closed-loop system for the study of rat 
+locomotion to provide more accurate analyses 
+of the animals’ gait and stride. These insights 
+are applicable to the medical field and the 
+ongoing research of spinal cord injury 
+recovery.
+NEEDS STATEMENT
+Team 2 | Camera Tracking System | 6
+NON-
+NEGOTIABLE
+REQUIREMENT METRIC TARGET VALUE JUSTIFICATION
+Video quality FPS 250 Client
+Camera speed m/s 1 Client
+Camera acceleration m/s2 1 Client
+Track length m >3 Client
+Communication interface - ROS Client
+NEGOTIABLE
+Modular design Yes/No Yes Client
+Angles of footage # (views) 3 (bottom, left/right) Client
+DESIGN CRITERIA
+Team 2 | Camera Tracking System | 7
+PREVIOUS SOLUTIONS
+Stationary camera
+Complicated image 
+algorithms
+Limited to one angle
+Data intensive 
+process
+Multiple cameras
+Limited track space
+Poor data quality
+Limited research 
+potential
+Not cost-effective
+Data intensive
+Time consuming 
+post-processing
+Pan-tilt camera
+IN LITERATURE OR THE LAB
+Team 2 | Camera Tracking System | 8
+Engineering 
+Design Process
+Team 2 | Camera Tracking System | 9
+Track and frame
+Motion system
+Camera tracking
+Transparent acrylic track with 
+mirrors (multiple angles) and 
+metal frame for support
+Linear motion system to enable 
+camera movement below the 
+track
+ROS for communication and 
+OpenCV for object detection and 
+centering in camera
+SUB-ASSEMBLIES
+Team 2 | Camera Tracking System | 10
+Linear rail with rack 
+and pinion
+POTENTIAL SOLUTIONS & DESIGNS
+FRAME
+MOTION 
+SYSTEM
+Linear rod with steel 
+wire
+Timing belt with motor 
+pulley
+Aluminum extrusion
+ Aluminum extrusion
+ Versaframe stock
+Team 2 | Camera Tracking System | 11
+Motion System
+Linear rail/ 
+crank slider
+Linear rod/ 
+steel wire Timing belt and Pulley
+Frame and 
+Track
+Aluminum extrusion v1
+$3,800
+Most stable/robust
+Slow speed
+$4,400
+Precise/durable
+Wiring complexities
+$2,500
+Easiest to repair
+Highest part count
+Aluminum extrusion v2
+$2,700
+Multiple angles
+Unstable
+$3,200
+Most modular
+Unstable
+$1,300
+Multiple angles
+Most unstable
+Versaframe stock
+$2,500
+Adaptable design
+Single angle
+$3,100
+Precise movement
+Wiring complexities
+$1,200
+Most adaptable design
+High part count
+*Note these costs are estimated
+Team 2 | Camera Tracking System | 12
+CHOSEN DESIGN
+• Utilizes VersaFrame stock for the outer 
+frame and track support
+• Features side mirrors to capture 3 
+angles of footage
+• Employs a timing belt pulley system for 
+precise motion control
+Team 2 | Camera Tracking System | 13
+ELECTRONICS & 
+WIRING
+FINAL DESIGN
+Team 2 | Camera Tracking System | 14
+System Block Diagram 12V
+Power Supply
+12V/50A
+Motor
+12V/20A
+RasPi
+5V/5A
+Buck 
+Converter
+12V → 5V
+Base 
+Station
+Limit 
+Switch
+Limit 
+Switch
+OpenCV
+Cam
+Slo-mo
+Cam
+Wall
+Outlet
+Motor 
+Controller
+LED 3m
+12V/3.5
+A
+Control
+Box
+LED 3m
+12V/3.5
+A
+LED 3m
+12V/3.5
+A
+LED 3m
+12V/3.5
+A
+Splitter
+Splitter
+Data
+Power
+Signal
+KEY
+14ft @20awg 
+14ft @18awg 
+28ft @20awg 
+14ft @12awg 
+Team 2 | Camera Tracking System | 15
+System Block Diagram 12V
+Power Cart LEDs
+Power Supply
+12V/50A
+Wall
+Outlet
+120VAC/20A
+12V/25A 12V/20A
+LED
+Splitter
+Cart
+Splitter
+12awg
+ 18awg
+18awg
+Control Box
+Team 2 | Camera Tracking System | 16
+RAT TRACKING 
+LOOP
+Team 2 | Camera Tracking System | 17
+ROS2 Node Diagram
+Base StationRaspberry PiMotor 
+Controller
+Image
+Motor SpeedPWM
+Team 2 | Camera Tracking System | 1 8
+CALCULATIONS
+FINAL DESIGN
+Team 2 | Camera Tracking System | 19
+MOTOR
+Used MATLAB code to 
+calculate the minimum 
+RPM and torque needed
+REV Robotics Neo 550 
+Brushless Motor
+Max RPM: 10,000
+Max torque: 0.97Nm
+Team 2 | Camera Tracking System | 20
+𝜃 = arctan 32
+10.5 = 71.8° ≈ 72°
+∅ = 𝜃
+2 = 72
+2 = 36°
+Optimal mirror angle will be 𝟑𝟔°
+𝜃
+𝜃/2
+𝜃/2
+32 in
+10.5 in
+MIRROR ANGLE
+Team 2 | Camera Tracking System | 21
+Testing Methods 
+& Results
+Team 2 | Camera Tracking System | 22
+VELOCITY
+MINIMUM 1M/S 
+Team 2 | Camera Tracking System | 23
+TEST METHODS
+1. Mark two lines 1 meter apart 
+underneath the camera’s mount
+2. Record the system in motion at 
+240FPS using 40% motor speed
+3. Count the number of frames 
+taken for the system to travel 
+from one line to the other
+4. Divide 240 FPS by the number of 
+frames calculated
+5. Repeat for three trials and 
+calculate average 
+1𝑚𝑒𝑡𝑒𝑟
+# 𝑜𝑓 𝑓𝑟𝑎𝑚𝑒𝑠 × 240 𝑓𝑟𝑎𝑚𝑒𝑠
+1 𝑠𝑒𝑐𝑜𝑛𝑑 = 𝑚/𝑠
+1 meter
+Team 2 | Camera Tracking System | 24
+MOTOR SPEED FOR TEST
+Testing range 
+determined from 
+manufacturer 
+specifications
+40% to 60%
+Team 2 | Camera Tracking System | 25
+TEST RESULTS
+Team 2 | Camera Tracking System | 26
+TEST RESULTS
+Trial # of Frames Speed (m/s)
+1 40 6.0
+2 38 6.3
+3 48 5.0
+Average 42 5.7
+Five times faster than the design criteria
+Team 2 | Camera Tracking System | 27
+ACCELERATION
+MINIMUM 1 M/𝑺𝟐
+Team 2 | Camera Tracking System | 28
+TEST METHODS
+1. Marked the motor with a tape as 
+indicator 
+2. Recorded time taken for motor 
+to reach a constant speed at 
+40% motor capacity (RPM is 
+measured start to end using a 
+tachometer)
+3. Divided speed by the time taken 
+to reach constant speed to get 
+the linear acceleration of the 
+motor. 𝑅𝑃𝑀
+𝑇𝑖𝑚𝑒 × 2𝜋𝑟
+60 𝑠𝑒𝑐𝑜𝑛𝑑𝑠 = 𝑚/𝑠2
+1 meter
+Team 2 | Camera Tracking System | 29
+TEST RESULTS
+Team 2 | Camera Tracking System | 30
+TEST RESULTS
+Trial RPM Time Acceleration
+1 4529 0.58 9.9176
+2 4457 0.63 8.9854
+3 4613 0.55 10.653
+Average 4533 0.587 9.852
+Five times faster than the design criteria
+Team 2 | Camera Tracking System | 31
+VIDEO FOOTAGE
+3 ANGLES VISIBLE 
+Team 2 | Camera Tracking System | 32
+TEST RESULTS
+Team 2 | Camera Tracking System | 33
+TEST RESULTS
+Criteria Minimum Value Pass/Fail
+Visible angles 3 Pass
+Team 2 | Camera Tracking System | 34
+Cost Analysis
+Team 2 | Camera Tracking System | 35
+FRAME
+Part Amount Unit Cost Total
+Extrusion
+1" x 1'' x 0.0625" 36 $12.99 $467.64
+1" x 2" x 0.125" 2 $24.99 $49.98
+1" x 2" x 0.125" 2 $15.49 $30.98
+Gussets
+T Gusset 42 $2.24 $94.08
+90 Degree Gusset 15 $2.24 $33.60
+Additional
+Rivets 8 $9.74 $77.92
+Window Film  Adhesive 2 $9.90 $19.80
+LED Strips 2 $16.99 $33.98
+Glue 2 $12.59 $25.18
+Total $833.16
+Team 2 | Camera Tracking System | 36
+MOTION SYSTEM
+Part Amount Unit Cost Total
+Pulley 1 $8.99 $8.99
+Timing Belt 1 $14.99 $14.99
+Ball Bearing 1 $3.99 $3.99
+U-Bracket 1 $4.49 $4.49
+L-Bracket 1 $5.99 $5.99
+Shaft Coupler 1 $4.99 $4.99
+Bearing 2 $5.99 $11.98
+D-Shaft 1 $2.89 $2.89
+Micro Limit Switch 1 $2.49 $2.49
+Total $60.80
+Team 2 | Camera Tracking System | 37
+ELECTRONICS
+Part Amount Unit Cost Total
+Drive Screws 1 $13.40 $13.40
+Locknuts 1 $5.57 $5.57
+Sheet 1/8"x12"x12" 2 $29.30 $58.60
+Sheet 1/8"x6"x6" 1 $9.38 $9.38
+Spacers 8 $1.38 $11.04
+Steel Locknut 1 $6.18 $6.18
+Socket Head Screw 1 $9.75 $9.75
+Drag Chain 2 $22.39 $44.78
+Toggle Switch 2 $6.39 $12.78
+Terminal Block 12 1 $10.39 $10.39
+Terminal Block 6 1 $7.19 $7.19
+Converter 1 $9.99 $9.99
+Standoffs 1 $2.99 $2.99
+Part Amount Unit Cost Total
+Zip Ties 1 $6.99 $6.99
+RasPi Active Cooler 1 $12.99 $12.99
+Power Supply 1 $8.29 $8.29
+Raspberry Pi 4 1 $74.99 $74.99
+Zip Tie Mounts 1 $6.99 $6.99
+M3 Screw Kit 1 $6.99 $6.99
+Power Cord 1 $8.40 $8.40
+Plug Adapter 1 $8.79 $8.79
+Tubing Kit 1 $6.99 $6.99
+10 Pin Connector 1 $9.49 $9.49
+Connector Kit 1 $9.99 $9.99
+Total $362.94
+Team 2 | Camera Tracking System | 38
+COST BREAKDOWN
+Frame & Track
+59%
+Motion System
+4%
+Electronics & Wiring
+26%
+Shipping
+11%
+Frame & Track
+Motion System
+Electronics & Wiring
+Shipping
+Team 2 | Camera Tracking System | 39
+FINANCING
+$1,000 
+$420.62 Source Amount
+Senior Design 
+Budget $1,000
+Dr. Spence $420.62
+Total $1,420.62
+*Approximately $220 over estimated cost
+Team 2 | Camera Tracking System | 40
+Success 
+Implications & 
+Next Steps
+Team 2 | Camera Tracking System | 41
+PROTOTYPE
+Team 2 | Camera Tracking System | 42
+DESIGN CRITERIA (PROGRESS)
+NON-
+NEGOTIABLE
+REQUIREMENT METRIC TARGET VALUE JUSTIFICATION
+Video quality FPS 250 Client
+Camera speed m/s 1 Client
+Camera acceleration m/s2 1 Client
+Track length m >3 Client
+Communication interface - ROS Client
+NEGOTIABLE
+Modular design Yes/No Yes Client
+Angles of footage # (views) 3 (bottom, left/right) Client
+Team 2 | Camera Tracking System | 43
+Prototype will serve as a tool for further research in The Spence Lab that 
+addresses the following targets:
+• Reducing premature mortality from non -communicable diseases
+• Access to quality essential health -care services
+GOAL 3: GOOD-HEALTH & WELL BEING
+UNITED NATIONS SDG
+The design allows for more data to be collected from one animal, reducing 
+the number of animals used and addressing the following target:
+• Protect animal species
+GOAL 15: LIFE ON LAND
+Team 2 | Camera Tracking System | 44
+NEXT STEPS – FUTURE IMPROVEMENTS
+• Increasing structural stability with cross bracing between support 
+beams.
+• Upgrading mirror design to allow for adjustable angles.
+• Refining bearing block design to reduce reliance on 3D printed parts, 
+improving precision in the motion system.
+• Enhancing lighting for more accurate data recording.
+Team 2 | Camera Tracking System | 45
+THANK YOU!
+QUESTIONS?
+Team 2 | Camera Tracking System | 46

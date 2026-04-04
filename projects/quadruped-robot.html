@@ -67,12 +67,20 @@
             border-radius: 8px;
             overflow: hidden;
             aspect-ratio: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-            color: var(--primary-color);
             transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery-caption {
+            margin-top: 0.75rem;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
         }
 
         .gallery-item:hover {
@@ -174,6 +182,9 @@
         <div class="container">
             <p class="breadcrumb"><a href="../index.html">Portfolio</a> / Quadruped Robot</p>
             <h1>Quadruped Robot Dog: Embedded Control & Programming Interface</h1>
+            <p style="margin-top: 0.75rem; color: rgba(255, 255, 255, 0.9);">
+                Temple University MEE 9995 Master's Project · Submitted 12/04/2025 · Advisor: Dr. Li Bai
+            </p>
         </div>
     </section>
 
@@ -186,14 +197,19 @@
         <!-- Overview Section -->
         <div class="project-content">
             <div class="project-section">
-                <h2>Project Overview</h2>
+                <h2>Project Overview: Squeaky</h2>
                 <p>
-                    The Quadruped Robot Dog is an advanced embedded control platform designed to make complex robotics concepts accessible through an intuitive, browser-based interface. 
-                    This project combines mechanical design, advanced control algorithms, and web-based programming to enable students and researchers to develop robot behaviors in real-time.
+                    <strong>Squeaky</strong> is a low-cost quadruped robot dog developed as a Master's Project to address a critical gap in K-12 STEM education: the lack of affordable, durable, and accessible robotic platforms. 
+                    Commercially available robot dogs typically cost $600-$2000, making them inaccessible to most schools and families. Squeaky was engineered to meet four key requirements:
                 </p>
+                <ul style="margin: 1.5rem 0; padding-left: 2rem; line-height: 2;">
+                    <li><strong>Affordability:</strong> Total material cost under $100</li>
+                    <li><strong>Durability:</strong> Withstand drops, impacts, and rough handling from students</li>
+                    <li><strong>Ease of Assembly & Repair:</strong> Modular design with simple, standardized components</li>
+                    <li><strong>Intuitive Interface:</strong> Block-based drag-and-drop coding without syntax barriers</li>
+                </ul>
                 <p style="margin-top: 1rem;">
-                    The system demonstrates the full spectrum of robotics engineering: from inverse kinematics calculations that translate desired leg positions into individual joint angles, 
-                    to predefined gait sequences that produce stable locomotion patterns, all controlled through a Scratch-style visual programming interface.
+                    This project demonstrates comprehensive systems engineering: from mechanical design and FEA analysis, to embedded control algorithms and real-time wireless communication.
                 </p>
             </div>
         </div>
@@ -202,42 +218,231 @@
         <div class="project-section">
             <h2>Project Gallery</h2>
             <p style="margin-bottom: 1.5rem; color: var(--text-secondary);">
-                Photos and renderings coming soon. Check back or <a href="mailto:fivepullens@gmail.com" style="color: var(--primary-color);">reach out</a> for a demo!
+                Current gallery includes visual placeholders mapped to real project moments; replace each with your actual build photos while keeping the captions and structure.
             </p>
             <div class="project-gallery">
-                <div class="gallery-item">
-                    <i class="fas fa-robot"></i>
+                <figure>
+                    <div class="gallery-item">
+                        <img src="../assets/photos/quadruped-overview.svg" alt="Quadruped robot mechanical layout and overall architecture">
+                    </div>
+                    <figcaption class="gallery-caption">System overview: 8-DOF quadruped architecture with embedded servo-leg design.</figcaption>
+                </figure>
+                <figure>
+                    <div class="gallery-item">
+                        <img src="../assets/photos/quadruped-ui.svg" alt="Block-based web programming dashboard for robot control">
+                    </div>
+                    <figcaption class="gallery-caption">Control interface: browser-hosted drag-and-drop logic for K-12 robotics workflows.</figcaption>
+                </figure>
+                <figure>
+                    <div class="gallery-item">
+                        <img src="../assets/photos/quadruped-overview.svg" alt="Structural validation and durability test context image">
+                    </div>
+                    <figcaption class="gallery-caption">Validation context: placeholder slot for FEA plots and physical drop-test photos.</figcaption>
+                </figure>
+            </div>
+        </div>
+
+        <!-- Mechanical Design -->
+        <div class="project-section">
+            <h2>Mechanical Design</h2>
+            <p style="margin-bottom: 1.5rem;">
+                The robot features an <strong>8-degree-of-freedom configuration</strong> with two MG996R high-torque servo motors per leg (4 legs × 2 servos = 8 DOF), enabling precise control of hip and knee joints.
+            </p>
+            <div class="specs-grid">
+                <div class="spec-item">
+                    <h3>Leg Architecture</h3>
+                    <p>Embedded servo leg design chosen over linkage-based legs to reduce assembly complexity and simplify inverse kinematics calculations</p>
                 </div>
-                <div class="gallery-item">
-                    <i class="fas fa-code"></i>
+                <div class="spec-item">
+                    <h3>Materials & Fabrication</h3>
+                    <p>3D-printed PLA structure designed in Onshape CAD with intentional layer-line orientation for maximum strength. Aluminum alloy servo attachments at joints ensure robust connections.</p>
                 </div>
-                <div class="gallery-item">
-                    <i class="fas fa-microchip"></i>
+                <div class="spec-item">
+                    <h3>Modularity</h3>
+                    <p>Uses only two screw types with fully modular components for easy assembly, repair, and customization</p>
+                </div>
+                <div class="spec-item">
+                    <h3>Design Software</h3>
+                    <p>Onshape (cloud-based CAD) for parametric design enabling rapid iteration and client feedback incorporation</p>
                 </div>
             </div>
         </div>
 
-        <!-- Technical Specifications -->
+        <!-- Electrical Design -->
         <div class="project-section">
-            <h2>Technical Specifications</h2>
+            <h2>Electrical Architecture</h2>
+            <p style="margin-bottom: 1.5rem;">
+                The electrical system prioritizes real-time responsiveness, low cost, and simple integration using standard off-the-shelf components.
+            </p>
             <div class="specs-grid">
                 <div class="spec-item">
-                    <h3>Control Architecture</h3>
-                    <p>Real-time embedded control using Arduino-based microcontroller with deterministic timing and motor feedback integration</p>
+                    <h3>Microcontroller</h3>
+                    <p><strong>Arduino Uno R4 Wi-Fi</strong> with built-in ESP32-S3 wireless module for wireless control without additional shields</p>
                 </div>
                 <div class="spec-item">
-                    <h3>Kinematics Engine</h3>
-                    <p>Inverse kinematics solver enabling precise leg positioning and stride planning in 3D space</p>
+                    <h3>Servo Control</h3>
+                    <p>V5 Sensor Shield breakout board for simplified servo connection without complex wiring. 8× MG996R servos with internal potentiometer feedback</p>
                 </div>
                 <div class="spec-item">
-                    <h3>Gait System</h3>
-                    <p>Multiple predefined locomotion patterns (trot, pace, gallop) with parameterizable speed and stride length</p>
+                    <h3>Motor Selection</h3>
+                    <p>Servos chosen over DC/stepper motors for built-in position feedback, lower power consumption, and simpler control</p>
                 </div>
                 <div class="spec-item">
-                    <h3>User Interface</h3>
-                    <p>Browser-based visual programming environment with live code execution and real-time telemetry feedback</p>
+                    <h3>Power Management</h3>
+                    <p>Tethered power supply (to PC or wall outlet) enables easy debugging and eliminates charging time requirements</p>
                 </div>
             </div>
+        </div>
+
+        <!-- Control Logic & Kinematics -->
+        <div class="project-section">
+            <h2>Control Logic & Inverse Kinematics</h2>
+            <p style="margin-bottom: 1.5rem;">
+                The control system uses precise inverse kinematic equations to translate desired foot positions into servo angle commands.
+            </p>
+            <p><strong>Calibration Process:</strong></p>
+            <ul style="margin: 1rem 0 1.5rem 2rem; line-height: 1.8;">
+                <li>Each servo calibrated to 90° neutral position</li>
+                <li>Limbs adjusted to perpendicular configuration</li>
+                <li>Calibration offset saved and applied to all subsequent angle calculations</li>
+            </ul>
+            <p><strong>Kinematics Model:</strong></p>
+            <ul style="margin: 1rem 0 1.5rem 2rem; line-height: 1.8;">
+                <li>Each leg modeled as a two-link planar system</li>
+                <li>Known leg dimensions (H = 72.62 mm, K = 76.21 mm) used in inverse kinematics</li>
+                <li>Law of Cosines applied to compute joint angles from desired X-Y foot positions</li>
+                <li>C++ implementation on Arduino ensures low computational overhead</li>
+            </ul>
+            <p><strong>Result:</strong> Smooth leg motion with real-time responsiveness suitable for microcontroller execution.</p>
+        </div>
+
+        <!-- Durability Testing -->
+        <div class="project-section">
+            <h2>Durability & Structural Validation</h2>
+            <p style="margin-bottom: 1.5rem;">
+                Finite Element Analysis (FEA) in SimScale validated structural integrity under extreme conditions. Multiple loading scenarios simulated with forces up to 100N (~22 lbs).
+            </p>
+            <table style="width: 100%; margin: 1.5rem 0; border-collapse: collapse;">
+                <tr style="background: var(--bg-light);">
+                    <th style="padding: 0.75rem; text-align: left; border: 1px solid var(--border-color);">Test Scenario</th>
+                    <th style="padding: 0.75rem; text-align: left; border: 1px solid var(--border-color);">Force Applied</th>
+                    <th style="padding: 0.75rem; text-align: left; border: 1px solid var(--border-color);">Factor of Safety</th>
+                </tr>
+                <tr>
+                    <td style="padding: 0.75rem; border: 1px solid var(--border-color);">Upper Leg - Distributed Load (compression)</td>
+                    <td style="padding: 0.75rem; border: 1px solid var(--border-color);">50N / 100N</td>
+                    <td style="padding: 0.75rem; border: 1px solid var(--border-color);">11.9 / 5.96</td>
+                </tr>
+                <tr>
+                    <td style="padding: 0.75rem; border: 1px solid var(--border-color);">Upper Leg - Point Load (impact)</td>
+                    <td style="padding: 0.75rem; border: 1px solid var(--border-color);">50N / 100N</td>
+                    <td style="padding: 0.75rem; border: 1px solid var(--border-color);">29.7 / 14.9</td>
+                </tr>
+                <tr>
+                    <td style="padding: 0.75rem; border: 1px solid var(--border-color);">Lower Leg - Distributed Load (pickup scenario)</td>
+                    <td style="padding: 0.75rem; border: 1px solid var(--border-color);">50N / 100N</td>
+                    <td style="padding: 0.75rem; border: 1px solid var(--border-color);">3.56 / 1.78</td>
+                </tr>
+                <tr>
+                    <td style="padding: 0.75rem; border: 1px solid var(--border-color);">Lower Leg - Point Contact (drop scenario)</td>
+                    <td style="padding: 0.75rem; border: 1px solid var(--border-color);">50N / 100N</td>
+                    <td style="padding: 0.75rem; border: 1px solid var(--border-color);">29.7 / 14.9</td>
+                </tr>
+            </table>
+            <p style="color: var(--text-secondary); font-size: 0.95rem;">
+                <strong>Minimum factor of safety: 1.78</strong> under extreme conditions (100N applied force). Since this exceeds normal operational stress, structural integrity is validated for everyday classroom use. Results based on PLA yield strength of 40 MPa.
+            </p>
+        </div>
+
+        <!-- User Interface -->
+        <div class="project-section">
+            <h2>User Interface & Block-Based Programming</h2>
+            <p style="margin-bottom: 1.5rem;">
+                To make the robot accessible to younger students, a custom drag-and-drop interface was developed using lightweight web-based architecture.
+            </p>
+            <p><strong>Technical Implementation:</strong></p>
+            <ul style="margin: 1rem 0 1.5rem 2rem; line-height: 1.8;">
+                <li>ESP32-S3 module hosts a lightweight HTTP server with HTML-based control dashboard</li>
+                <li>Dashboard stored directly in flash memory for zero external dependencies</li>
+                <li>Users connect via Wi-Fi to access Scratch-style interface</li>
+                <li>No text-based code required—purely visual block composition</li>
+            </ul>
+            <p><strong>Available Commands:</strong></p>
+            <ul style="margin: 1rem 0 1.5rem 2rem; line-height: 1.8;">
+                <li><strong>Motion:</strong> Stand, Sit, Walk Forward, Walk Backward, Turn Left, Turn Right, Lean Left, Lean Right, Height Control</li>
+                <li><strong>Logic:</strong> Repeat loops, Wait functions, Conditional operators</li>
+            </ul>
+            <p><strong>Learning Benefits:</strong></p>
+            <ul style="margin: 1rem 0 1.5rem 2rem; line-height: 1.8;">
+                <li>Prioritizes conceptual understanding of coding and algorithmic thinking</li>
+                <li>Eliminates syntax error frustration</li>
+                <li>Enables rapid prototyping with immediate visual feedback</li>
+                <li>Gamifies learning experience through interactive robot control</li>
+            </ul>
+        </div>
+
+        <!-- Cost Analysis -->
+        <div class="project-section">
+            <h2>Cost Analysis & Market Positioning</h2>
+            <p style="margin-bottom: 1.5rem;">
+                Aggressive cost optimization was central to the design, with material costs tracking at <strong>~$103 using retail channels</strong> (Amazon, etc.), comfortably near the $100 target.
+            </p>
+            <table style="width: 100%; margin: 1.5rem 0; border-collapse: collapse;">
+                <tr style="background: var(--bg-light);">
+                    <th style="padding: 0.75rem; text-align: left; border: 1px solid var(--border-color);">Component</th>
+                    <th style="padding: 0.75rem; text-align: left; border: 1px solid var(--border-color);">Qty</th>
+                    <th style="padding: 0.75rem; text-align: left; border: 1px solid var(--border-color);">Cost</th>
+                    <th style="padding: 0.75rem; text-align: left; border: 1px solid var(--border-color);">% of Total</th>
+                </tr>
+                <tr>
+                    <td style="padding: 0.75rem; border: 1px solid var(--border-color);">MG996R Servos (8×)</td>
+                    <td style="padding: 0.75rem; border: 1px solid var(--border-color);">8</td>
+                    <td style="padding: 0.75rem; border: 1px solid var(--border-color);">$32.84</td>
+                    <td style="padding: 0.75rem; border: 1px solid var(--border-color);">32%</td>
+                </tr>
+                <tr>
+                    <td style="padding: 0.75rem; border: 1px solid var(--border-color);">Arduino Uno R4 Wi-Fi</td>
+                    <td style="padding: 0.75rem; border: 1px solid var(--border-color);">1</td>
+                    <td style="padding: 0.75rem; border: 1px solid var(--border-color);">$29.15</td>
+                    <td style="padding: 0.75rem; border: 1px solid var(--border-color);">28%</td>
+                </tr>
+                <tr>
+                    <td style="padding: 0.75rem; border: 1px solid var(--border-color);">Aluminum Servo Attachments (8×)</td>
+                    <td style="padding: 0.75rem; border: 1px solid var(--border-color);">8</td>
+                    <td style="padding: 0.75rem; border: 1px solid var(--border-color);">$14.82</td>
+                    <td style="padding: 0.75rem; border: 1px solid var(--border-color);">14%</td>
+                </tr>
+                <tr>
+                    <td style="padding: 0.75rem; border: 1px solid var(--border-color);">3D Print Material (PLA, 276g)</td>
+                    <td style="padding: 0.75rem; border: 1px solid var(--border-color);">-</td>
+                    <td style="padding: 0.75rem; border: 1px solid var(--border-color);">$8.28</td>
+                    <td style="padding: 0.75rem; border: 1px solid var(--border-color);">8%</td>
+                </tr>
+                <tr>
+                    <td style="padding: 0.75rem; border: 1px solid var(--border-color);">V5 Sensor Shield</td>
+                    <td style="padding: 0.75rem; border: 1px solid var(--border-color);">1</td>
+                    <td style="padding: 0.75rem; border: 1px solid var(--border-color);">$2.83</td>
+                    <td style="padding: 0.75rem; border: 1px solid var(--border-color);">3%</td>
+                </tr>
+                <tr>
+                    <td style="padding: 0.75rem; border: 1px solid var(--border-color);">Power Supply & M3 Screws</td>
+                    <td style="padding: 0.75rem; border: 1px solid var(--border-color);">-</td>
+                    <td style="padding: 0.75rem; border: 1px solid var(--border-color);">$15.83</td>
+                    <td style="padding: 0.75rem; border: 1px solid var(--border-color);">15%</td>
+                </tr>
+                <tr style="font-weight: bold; background: var(--primary-color); color: white;">
+                    <td style="padding: 0.75rem; border: 1px solid var(--border-color);">TOTAL</td>
+                    <td style="padding: 0.75rem; border: 1px solid var(--border-color);">-</td>
+                    <td style="padding: 0.75rem; border: 1px solid var(--border-color);">$103.75</td>
+                    <td style="padding: 0.75rem; border: 1px solid var(--border-color);">100%</td>
+                </tr>
+            </table>
+            <p style="margin-top: 1.5rem; color: var(--text-secondary);">
+                <strong>Bulk Production:</strong> Costs reduce further through wholesale suppliers (AliExpress/Alibaba), bringing sub-$100 target closer to reality.
+            </p>
+            <p style="margin-top: 1rem; color: var(--text-secondary);">
+                <strong>Retail Price Estimate:</strong> Using industry-standard 2.5× markup for manufacturing, assembly, and packaging yields ~$260 — still <strong>20% cheaper than Petoi Bittle ($329)</strong> and <strong>56% cheaper than Mangdang Minipupper ($604)</strong>. This positions Squeaky as one of the most affordable robotic platforms available for K-12 education.
+            </p>
         </div>
 
         <!-- Technology Stack -->
@@ -285,6 +490,14 @@
                 I'm always open to discussing robotics, control systems, or technical collaborations. Let's talk!
             </p>
             <a href="mailto:fivepullens@gmail.com" class="btn btn-primary">Get In Touch</a>
+        </div>
+
+        <div class="project-section">
+            <h2>Source Document</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+                Technical details on this page are based on the full Master's Project paper.
+            </p>
+            <a href="../assets/PDFs/Robot Dog Final Paper.pdf" class="project-link" target="_blank">Open Master's Project Paper <i class="fas fa-arrow-right"></i></a>
         </div>
     </main>
 

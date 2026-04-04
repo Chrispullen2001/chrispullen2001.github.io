@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-label="ROS2 and OpenCV data pipeline placeholder">
+  <rect width="1600" height="1000" fill="#1c1c1c"/>
+  <rect x="170" y="160" width="1260" height="680" rx="28" fill="#121212" stroke="#3a3a3a" stroke-width="8"/>
+  <rect x="270" y="420" width="230" height="120" rx="16" fill="#b11226"/>
+  <rect x="670" y="420" width="230" height="120" rx="16" fill="#8e0e1f"/>
+  <rect x="1070" y="420" width="230" height="120" rx="16" fill="#b11226"/>
+  <line x1="500" y1="480" x2="670" y2="480" stroke="#eaeaea" stroke-width="10"/>
+  <line x1="900" y1="480" x2="1070" y2="480" stroke="#eaeaea" stroke-width="10"/>
+  <text x="285" y="490" fill="#fff" font-family="Arial, sans-serif" font-size="34" font-weight="700">VISION</text>
+  <text x="740" y="490" fill="#fff" font-family="Arial, sans-serif" font-size="34" font-weight="700">ROS2</text>
+  <text x="1125" y="490" fill="#fff" font-family="Arial, sans-serif" font-size="34" font-weight="700">CONTROL</text>
+  <text x="140" y="920" fill="#ffffff" font-family="Arial, sans-serif" font-size="56" font-weight="700">REAL-TIME DATA PIPELINE PLACEHOLDER</text>
+</svg>

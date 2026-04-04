@@ -1,0 +1,113 @@
+Christopher  Pullen  fivepullens@gmail.com |  Portfolio:  chrispullen2001.github.io   Mechanical  engineer  with  hands-on  experience  in  robotics,  embedded  systems,  and  manufacturing,  delivering  
+automated
+ 
+and
+ 
+electromechanical
+ 
+systems
+ 
+from
+ 
+concept
+ 
+through
+ 
+deployment.
+ 
+ 
+Skills  CAD:  SolidWorks,  OnShape,  Fusion  360,  AutoCAD  Robotics  &  Controls :  ROS2,  Quadruped  Locomotion,  Embedded  Systems,  Servo  Control,  Motion  Sequencing  Manufacturing :  Additive  Manufacturing  (FDM),  Laser  Cutting,  Prototyping  Testing:  LabVIEW,  NI-DAQ,  Instrumentation,  Sensor  Integration  Programming :  MATLAB,  Python,  G-Code  
+ 
+Experience  Product  Director,  Coco  Academy  –  Philadelphia,  PA  Jan  2026  –  Present  ●  Led  development  and  launch  of  weekly  engineering  programs  across  multiple  locations,  supporting  200+  students  per  
+week
+ 
+and
+ 
+enabling
+ 
+a
+ 
+2×
+ 
+enrollment
+ 
+increase
+ ●  Develop  standardized  SOPs,  training  manuals,  and  operational  workflows  to  ensure  consistent  execution,  safety,  and  
+quality
+ 
+at
+ 
+scale
+ ●   Manage  end-to-end  project  execution  including  prototyping,  fabrication,  vendor  coordination,  materials  logistics,  
+scheduling,
+ 
+and
+ 
+continuous
+ 
+process
+ 
+improvement
+ 
+ 
+Founder,  Pullen  3D  Printing  –  Philadelphia,  PA  2019  –  Present  ●  Built  additive  manufacturing  business  generating  $3K+/month  revenue  through  custom  prototyping  ●  Operate  and  maintain  a  fleet  of  20+  FDM  printers,  managing  production  scheduling  and  quality  control  ●  Design  mechanical  products  in  CAD  and  deliver  client-specific  engineered  solutions  
+ 
+Mechanical  Engineering  Intern,  SEPTA  –  Philadelphia,  PA  June  2024  –  August  2024  ●  Designed  and  fabricated  installation  hardware  for  transit  monitoring  systems,  improving  safety  and  maintainability  in  
+tunnel
+ 
+environments
+ ●  Produced  precision  inspection  gauges  to  qualify  supplier-manufactured  components  and  ensure  compliance  with  
+engineering
+ 
+tolerances
+ ●  Redesigned  system  testing  procedures  and  documentation  to  improve  reliability  and  commissioning  workflows  
+ 
+Projects  
+ 
+Quadruped  Robot  Dog  Embedded  Control  &  Programming  Interface    ●  Developed  an  embedded  quadruped  control  platform  using  an  Arduino  UNO  and  WiFi-based  control  interface  for  
+real-time
+ 
+interaction
+ ●  Implemented  inverse  kinematics  and  predefined  gait/motion  sequences  to  generate  coordinated  leg  trajectories  and  
+stable
+ 
+walking
+ 
+behaviors
+ ●  Built  a  Scratch-style  drag-and-drop  programming  UI  enabling  students  to  live-code  robot  behaviors  through  a  
+browser-based
+ 
+interface
+ 
+ 
+Camera  Tracking  System  (Senior  Design  /  Capstone)   ●  Designed  and  commissioned  a  closed-loop  automated  motion  and  vision  tracking  system  using  a  belt-driven  gantry,  
+ROS2,
+ 
+and
+ 
+OpenCV
+ 
+for
+ 
+continuous
+ 
+high-speed
+ 
+data
+ 
+capture
+ ●  Integrated  mechanical  design,  motor  sizing,  controls,  and  real-time  vision  tracking;  validated  system  performance  
+through
+ 
+structured
+ 
+testing
+ 
+and
+ 
+data
+ 
+analysis
+ 
+ 
+Education  Temple  University  –  Master  of  Science  in  Mechanical  Engineering     GPA:  3.65   2025  Temple  University  –  Bachelor  of  Science  in  Mechanical  Engineering     GPA:  3.46   2024  
