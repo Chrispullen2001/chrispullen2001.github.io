@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Camera Tracking System - Chris Pullen">
+    <title>Camera Tracking System | Chris Pullen</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .project-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            padding: 4rem 0;
+            margin-bottom: 3rem;
+        }
+
+        .project-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .project-header .breadcrumb {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .project-header .breadcrumb a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .project-header .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .project-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+            margin-bottom: 4rem;
+        }
+
+        .project-section {
+            background: var(--bg-white);
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .project-section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .project-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .gallery-item {
+            background: var(--bg-light);
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+            aspect-ratio: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--primary-color);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-color);
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .tech-item {
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .spec-item {
+            background: var(--bg-light);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .spec-item h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .spec-item p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 500;
+            transition: background 0.3s ease;
+            margin-bottom: 2rem;
+        }
+
+        .back-button:hover {
+            background: var(--accent-color);
+        }
+
+        @media (max-width: 768px) {
+            .project-header h1 {
+                font-size: 1.8rem;
+            }
+
+            .specs-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">Chris Pullen</div>
+            <ul class="nav-menu">
+                <li><a href="../index.html#about">About</a></li>
+                <li><a href="../index.html#projects">Projects</a></li>
+                <li><a href="../index.html#skills">Skills</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Project Header -->
+    <section class="project-header">
+        <div class="container">
+            <p class="breadcrumb"><a href="../index.html">Portfolio</a> / Camera Tracking System</p>
+            <h1>Automated Camera Tracking System (Senior Capstone)</h1>
+        </div>
+    </section>
+
+    <!-- Project Content -->
+    <main class="container">
+        <a href="../index.html#projects" class="back-button">
+            <i class="fas fa-arrow-left"></i> Back to Projects
+        </a>
+
+        <!-- Overview Section -->
+        <div class="project-content">
+            <div class="project-section">
+                <h2>Project Overview</h2>
+                <p>
+                    The Automated Camera Tracking System was developed as a senior capstone project to enable continuous high-speed motion data capture over extended ranges. 
+                    This system integrates mechanical design, ROS2-based controls, and computer vision to create a closed-loop tracking platform capable of capturing precise motion information.
+                </p>
+                <p style="margin-top: 1rem;">
+                    The project demonstrates comprehensive systems engineering: a belt-driven gantry mechanism enables smooth linear motion, real-time motor control manages positioning, 
+                    and OpenCV-based vision algorithms track subjects dynamically. All subsystems are orchestrated through ROS2, creating a modular, scalable platform for research and data acquisition.
+                </p>
+            </div>
+        </div>
+
+        <!-- Gallery Section -->
+        <div class="project-section">
+            <h2>Project Gallery</h2>
+            <p style="margin-bottom: 1.5rem; color: var(--text-secondary);">
+                Photos and CAD renderings coming soon. Check back or <a href="mailto:fivepullens@gmail.com" style="color: var(--primary-color);">reach out</a> for details!
+            </p>
+            <div class="project-gallery">
+                <div class="gallery-item">
+                    <i class="fas fa-camera"></i>
+                </div>
+                <div class="gallery-item">
+                    <i class="fas fa-cogs"></i>
+                </div>
+                <div class="gallery-item">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- System Architecture -->
+        <div class="project-section">
+            <h2>System Architecture</h2>
+            <div class="specs-grid">
+                <div class="spec-item">
+                    <h3>Mechanical Subsystem</h3>
+                    <p>Belt-driven linear gantry with stepper motors, providing smooth motion over extended travel ranges with submillimeter positioning accuracy</p>
+                </div>
+                <div class="spec-item">
+                    <h3>Control Architecture</h3>
+                    <p>ROS2-based modular control framework enabling real-time motor commands, sensor feedback integration, and inter-subsystem communication</p>
+                </div>
+                <div class="spec-item">
+                    <h3>Vision Pipeline</h3>
+                    <p>OpenCV-based real-time tracking algorithms enabling dynamic subject following and automated frame capture at specific motion points</p>
+                </div>
+                <div class="spec-item">
+                    <h3>Data Acquisition</h3>
+                    <p>Synchronized high-speed camera capture with motion telemetry, producing comprehensive datasets for motion analysis and research</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Technical Specifications -->
+        <div class="project-section">
+            <h2>Technical Details</h2>
+            <ul style="list-style-position: inside; line-height: 2; color: var(--text-secondary);">
+                <li><strong style="color: white;">Mechanical Design:</strong> Custom belt-driven gantry with precision ball bearings and stepper motor actuation</li>
+                <li><strong style="color: white;">Motor Control:</strong> Microstepping drivers with closed-loop encoder feedback for consistent positioning</li>
+                <li><strong style="color: white;">Travel Range:</strong> Extended linear motion capability suitable for large-scale motion capture scenarios</li>
+                <li><strong style="color: white;">Vision Processing:</strong> Real-time OpenCV algorithms for subject detection, tracking, and frame synchronization</li>
+                <li><strong style="color: white;">Communication:</strong> ROS2 middleware enabling scalable node-based architecture and real-time data streaming</li>
+            </ul>
+        </div>
+
+        <!-- Technology Stack -->
+        <div class="project-section">
+            <h2>Technology Stack</h2>
+            <div class="tech-stack">
+                <div class="tech-item">Python</div>
+                <div class="tech-item">ROS2</div>
+                <div class="tech-item">OpenCV</div>
+                <div class="tech-item">C++</div>
+                <div class="tech-item">SolidWorks</div>
+                <div class="tech-item">Stepper Motors</div>
+            </div>
+        </div>
+
+        <!-- Key Achievements -->
+        <div class="project-section">
+            <h2>Key Achievements</h2>
+            <ul style="list-style-position: inside; line-height: 2;">
+                <li>Successfully designed and built a functioning automated motion capture platform from concept to deployment</li>
+                <li>Integrated multiple engineering disciplines: mechanical design, controls, and computer vision into a cohesive system</li>
+                <li>Achieved reliable closed-loop tracking with vision-based feedback under real-time constraints</li>
+                <li>Created modular ROS2 architecture enabling future expansion and research applications</li>
+                <li>Established robust mechanical design capable of extended travel with precision and repeatability</li>
+            </ul>
+        </div>
+
+        <!-- Challenges & Solutions -->
+        <div class="project-section">
+            <h2>Challenges & Solutions</h2>
+            <p><strong style="color: var(--primary-color);">Challenge: Motion Blur Under High-Speed Capture</strong></p>
+            <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+                Solution: Implemented predictive tracking algorithm using ROS2 to anticipate subject motion and position camera ahead of movement, 
+                combined with high-speed shutter settings to freeze motion dynamics.
+            </p>
+            <p><strong style="color: var(--primary-color);">Challenge: System Latency Between Vision Processing and Motor Commands</strong></p>
+            <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+                Solution: Optimized the ROS2 middleware communication stack and implemented dedicated real-time nodes for control, 
+                reducing latency to sub-100ms for responsive closed-loop tracking.
+            </p>
+            <p><strong style="color: var(--primary-color);">Challenge: Mechanical Vibration During High-Speed Motion</strong></p>
+            <p style="color: var(--text-secondary);">
+                Solution: Reinforced frame geometry, upgraded bearing systems, and implemented soft-start acceleration profiles 
+                to minimize vibration while maintaining operational speed.
+            </p>
+        </div>
+
+        <!-- Call to Action -->
+        <div class="project-section" style="text-align: center; background: linear-gradient(135deg, rgba(177, 18, 38, 0.1), rgba(142, 14, 31, 0.1));">
+            <h2>Interested in This Project?</h2>
+            <p style="margin-bottom: 1.5rem;">
+                Whether you're interested in robotics, research applications, or motion capture technology, let's discuss your needs.
+            </p>
+            <a href="mailto:fivepullens@gmail.com" class="btn btn-primary">Get In Touch</a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Chris Pullen. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>

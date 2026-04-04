@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Quadruped Robot Dog - Chris Pullen">
+    <title>Quadruped Robot Dog | Chris Pullen</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .project-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            padding: 4rem 0;
+            margin-bottom: 3rem;
+        }
+
+        .project-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .project-header .breadcrumb {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .project-header .breadcrumb a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .project-header .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .project-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+            margin-bottom: 4rem;
+        }
+
+        .project-section {
+            background: var(--bg-white);
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .project-section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .project-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .gallery-item {
+            background: var(--bg-light);
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+            aspect-ratio: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--primary-color);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-color);
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .tech-item {
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .spec-item {
+            background: var(--bg-light);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .spec-item h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .spec-item p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 500;
+            transition: background 0.3s ease;
+            margin-bottom: 2rem;
+        }
+
+        .back-button:hover {
+            background: var(--accent-color);
+        }
+
+        @media (max-width: 768px) {
+            .project-header h1 {
+                font-size: 1.8rem;
+            }
+
+            .specs-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">Chris Pullen</div>
+            <ul class="nav-menu">
+                <li><a href="../index.html#about">About</a></li>
+                <li><a href="../index.html#projects">Projects</a></li>
+                <li><a href="../index.html#skills">Skills</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Project Header -->
+    <section class="project-header">
+        <div class="container">
+            <p class="breadcrumb"><a href="../index.html">Portfolio</a> / Quadruped Robot</p>
+            <h1>Quadruped Robot Dog: Embedded Control & Programming Interface</h1>
+        </div>
+    </section>
+
+    <!-- Project Content -->
+    <main class="container">
+        <a href="../index.html#projects" class="back-button">
+            <i class="fas fa-arrow-left"></i> Back to Projects
+        </a>
+
+        <!-- Overview Section -->
+        <div class="project-content">
+            <div class="project-section">
+                <h2>Project Overview</h2>
+                <p>
+                    The Quadruped Robot Dog is an advanced embedded control platform designed to make complex robotics concepts accessible through an intuitive, browser-based interface. 
+                    This project combines mechanical design, advanced control algorithms, and web-based programming to enable students and researchers to develop robot behaviors in real-time.
+                </p>
+                <p style="margin-top: 1rem;">
+                    The system demonstrates the full spectrum of robotics engineering: from inverse kinematics calculations that translate desired leg positions into individual joint angles, 
+                    to predefined gait sequences that produce stable locomotion patterns, all controlled through a Scratch-style visual programming interface.
+                </p>
+            </div>
+        </div>
+
+        <!-- Gallery Section -->
+        <div class="project-section">
+            <h2>Project Gallery</h2>
+            <p style="margin-bottom: 1.5rem; color: var(--text-secondary);">
+                Photos and renderings coming soon. Check back or <a href="mailto:fivepullens@gmail.com" style="color: var(--primary-color);">reach out</a> for a demo!
+            </p>
+            <div class="project-gallery">
+                <div class="gallery-item">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <div class="gallery-item">
+                    <i class="fas fa-code"></i>
+                </div>
+                <div class="gallery-item">
+                    <i class="fas fa-microchip"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- Technical Specifications -->
+        <div class="project-section">
+            <h2>Technical Specifications</h2>
+            <div class="specs-grid">
+                <div class="spec-item">
+                    <h3>Control Architecture</h3>
+                    <p>Real-time embedded control using Arduino-based microcontroller with deterministic timing and motor feedback integration</p>
+                </div>
+                <div class="spec-item">
+                    <h3>Kinematics Engine</h3>
+                    <p>Inverse kinematics solver enabling precise leg positioning and stride planning in 3D space</p>
+                </div>
+                <div class="spec-item">
+                    <h3>Gait System</h3>
+                    <p>Multiple predefined locomotion patterns (trot, pace, gallop) with parameterizable speed and stride length</p>
+                </div>
+                <div class="spec-item">
+                    <h3>User Interface</h3>
+                    <p>Browser-based visual programming environment with live code execution and real-time telemetry feedback</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Technology Stack -->
+        <div class="project-section">
+            <h2>Technology Stack</h2>
+            <div class="tech-stack">
+                <div class="tech-item">Arduino C++</div>
+                <div class="tech-item">Inverse Kinematics</div>
+                <div class="tech-item">HTML/CSS/JavaScript</div>
+                <div class="tech-item">Web Sockets</div>
+                <div class="tech-item">Motor Control</div>
+                <div class="tech-item">Real-time Systems</div>
+            </div>
+        </div>
+
+        <!-- Key Features -->
+        <div class="project-section">
+            <h2>Key Features</h2>
+            <ul style="list-style-position: inside; line-height: 2;">
+                <li><strong>Real-Time Control:</strong> Low-latency communication between web interface and embedded controller</li>
+                <li><strong>Inverse Kinematics:</strong> Automatic conversion of desired foot positions into joint angle commands</li>
+                <li><strong>Gait Sequencing:</strong> Pre-programmed locomotion patterns for stable, coordinated movement</li>
+                <li><strong>Visual Programming:</strong> Scratch-style blocks enable intuitive behavior design without traditional syntax</li>
+                <li><strong>Live Telemetry:</strong> Real-time sensor feedback displayed directly in the web interface</li>
+                <li><strong>Extensible Architecture:</strong> Modular design allows for custom gaits and control strategies</li>
+            </ul>
+        </div>
+
+        <!-- Results & Impact -->
+        <div class="project-section">
+            <h2>Results & Impact</h2>
+            <p>
+                This project demonstrates integration of mechanical design, control theory, and software engineering into a cohesive system. 
+                The browser-based interface lowers barriers to entry for robotics, making advanced concepts like inverse kinematics accessible to students with minimal programming background.
+            </p>
+            <p style="margin-top: 1rem;">
+                The platform has been refined through iterative testing and user feedback, establishing it as an effective tool for robotics education and research prototyping.
+            </p>
+        </div>
+
+        <!-- Call to Action -->
+        <div class="project-section" style="text-align: center; background: linear-gradient(135deg, rgba(177, 18, 38, 0.1), rgba(142, 14, 31, 0.1));">
+            <h2>Interested in This Project?</h2>
+            <p style="margin-bottom: 1.5rem;">
+                I'm always open to discussing robotics, control systems, or technical collaborations. Let's talk!
+            </p>
+            <a href="mailto:fivepullens@gmail.com" class="btn btn-primary">Get In Touch</a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Chris Pullen. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>

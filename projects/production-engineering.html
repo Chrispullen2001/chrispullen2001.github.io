@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Production Engineering - Chris Pullen">
+    <title>Production Engineering | Chris Pullen</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .project-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            padding: 4rem 0;
+            margin-bottom: 3rem;
+        }
+
+        .project-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .project-header .breadcrumb {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .project-header .breadcrumb a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .project-header .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .project-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+            margin-bottom: 4rem;
+        }
+
+        .project-section {
+            background: var(--bg-white);
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .project-section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .project-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .gallery-item {
+            background: var(--bg-light);
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+            aspect-ratio: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--primary-color);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-color);
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .tech-item {
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .spec-item {
+            background: var(--bg-light);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .spec-item h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .spec-item p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 500;
+            transition: background 0.3s ease;
+            margin-bottom: 2rem;
+        }
+
+        .back-button:hover {
+            background: var(--accent-color);
+        }
+
+        .timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .timeline-item {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            padding-left: 2rem;
+            border-left: 3px solid var(--border-color);
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            left: -8px;
+            top: 0;
+            border: 3px solid var(--bg-white);
+        }
+
+        .timeline-item h3 {
+            color: var(--primary-color);
+            margin: 0;
+            white-space: nowrap;
+            font-size: 0.9rem;
+            margin-top: 0.25rem;
+        }
+
+        .timeline-item p {
+            margin: 0;
+            color: var(--text-secondary);
+        }
+
+        @media (max-width: 768px) {
+            .project-header h1 {
+                font-size: 1.8rem;
+            }
+
+            .specs-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">Chris Pullen</div>
+            <ul class="nav-menu">
+                <li><a href="../index.html#about">About</a></li>
+                <li><a href="../index.html#projects">Projects</a></li>
+                <li><a href="../index.html#skills">Skills</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Project Header -->
+    <section class="project-header">
+        <div class="container">
+            <p class="breadcrumb"><a href="../index.html">Portfolio</a> / Production Engineering</p>
+            <h1>Production Engineering: Custom 3D Manufacturing (Publicis / P&G)</h1>
+        </div>
+    </section>
+
+    <!-- Project Content -->
+    <main class="container">
+        <a href="../index.html#projects" class="back-button">
+            <i class="fas fa-arrow-left"></i> Back to Projects
+        </a>
+
+        <!-- Overview Section -->
+        <div class="project-content">
+            <div class="project-section">
+                <h2>Project Overview</h2>
+                <p>
+                    This project demonstrates rapid-turnaround custom manufacturing for a high-profile commercial client. 
+                    Under an accelerated sub-one-week deadline, a mascot-scale 3D-printed chain and pendant were designed, 
+                    fabricated, and delivered for a Publicis/P&G campaign.
+                </p>
+                <p style="margin-top: 1rem;">
+                    The project showcases the full production engineering workflow: rapid CAD iteration incorporating client feedback, 
+                    print strategy optimization for visual quality and structural integrity, and coordinated post-processing to meet 
+                    exacting aesthetic and functional requirements at scale—all while maintaining production quality and deadline adherence.
+                </p>
+            </div>
+        </div>
+
+        <!-- Gallery Section -->
+        <div class="project-section">
+            <h2>Project Gallery</h2>
+            <p style="margin-bottom: 1.5rem; color: var(--text-secondary);">
+                Final product photos and CAD renderings coming soon. <a href="mailto:fivepullens@gmail.com" style="color: var(--primary-color);">Contact me</a> for project portfolio access!
+            </p>
+            <div class="project-gallery">
+                <div class="gallery-item">
+                    <i class="fas fa-cube"></i>
+                </div>
+                <div class="gallery-item">
+                    <i class="fas fa-print"></i>
+                </div>
+                <div class="gallery-item">
+                    <i class="fas fa-gears"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project Scope -->
+        <div class="project-section">
+            <h2>Project Scope</h2>
+            <div class="specs-grid">
+                <div class="spec-item">
+                    <h3>Deliverable</h3>
+                    <p>Mascot-scale 3D-printed chain and pendant assembly requiring high visual fidelity and structural durability</p>
+                </div>
+                <div class="spec-item">
+                    <h3>Timeline</h3>
+                    <p>Sub-one-week deadline from initial concept through final delivery—exemplifying rapid prototyping and manufacturing response</p>
+                </div>
+                <div class="spec-item">
+                    <h3>Quality Requirements</h3>
+                    <p>Production-grade aesthetics, structural integrity for commercial use, and dimensional accuracy meeting client specifications</p>
+                </div>
+                <div class="spec-item">
+                    <h3>Scale Challenge</h3>
+                    <p>Managing large-scale 3D printing constraints including print time optimization, post-processing complexity, and material selection</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Production Timeline -->
+        <div class="project-section">
+            <h2>Production Timeline</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div style="flex: 1;">
+                        <h3>Day 1 - Concept & Design</h3>
+                        <p>Client briefing, initial CAD modeling, rapid iteration cycles incorporating feedback</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div style="flex: 1;">
+                        <h3>Day 2-3 - Print Planning</h3>
+                        <p>Print strategy optimization, slicing parameters refinement, support structure design for quality and efficiency</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div style="flex: 1;">
+                        <h3>Day 4 - Fabrication</h3>
+                        <p>Large-scale 3D printing execution with real-time monitoring and quality verification</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div style="flex: 1;">
+                        <h3>Day 5-6 - Post-Processing</h3>
+                        <p>Support removal, surface finishing, assembly integration, and final quality inspection</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div style="flex: 1;">
+                        <h3>Day 7 - Delivery</h3>
+                        <p>Final quality sign-off and delivery to client for campaign deployment</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Technology Stack -->
+        <div class="project-section">
+            <h2>Technology & Methods</h2>
+            <div class="tech-stack">
+                <div class="tech-item">FDM 3D Printing</div>
+                <div class="tech-item">CAD Design (SolidWorks/Fusion)</div>
+                <div class="tech-item">Slicing Optimization</div>
+                <div class="tech-item">Post-Processing</div>
+                <div class="tech-item">Quality Assurance</div>
+                <div class="tech-item">Project Management</div>
+            </div>
+        </div>
+
+        <!-- Key Achievements -->
+        <div class="project-section">
+            <h2>Key Achievements</h2>
+            <ul style="list-style-position: inside; line-height: 2;">
+                <li>Delivered production-grade deliverable on aggressive sub-one-week timeline</li>
+                <li>Managed rapid design iteration incorporating real-time client feedback while maintaining schedule</li>
+                <li>Optimized large-scale 3D printing parameters balancing print time, material efficiency, and output quality</li>
+                <li>Executed complex post-processing and assembly workflow within tight deadline constraints</li>
+                <li>Achieved client satisfaction with final product meeting all aesthetic and functional specifications</li>
+            </ul>
+        </div>
+
+        <!-- Production Insights -->
+        <div class="project-section">
+            <h2>Production Insights</h2>
+            <p><strong style="color: var(--primary-color);">Rapid CAD Iteration Strategy</strong></p>
+            <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
+                Leveraged parametric CAD design principles to enable fast modification cycles. Key features were designed as variables, 
+                allowing dimensional or geometric changes to propagate automatically without full model reconstruction.
+            </p>
+            <p><strong style="color: var(--primary-color);">Print Time Optimization</strong></p>
+            <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
+                Analyzed printer capabilities and material constraints to develop optimal layer height, infill percentage, and 
+                support structure strategies, reducing total print time by 30% without compromising final quality.
+            </p>
+            <p><strong style="color: var(--primary-color);">Quality Control Checkpoints</strong></p>
+            <p style="color: var(--text-secondary);">
+                Established staged quality verification throughout production: CAD dimensional checks, post-print dimensional verification, 
+                and final assembly inspection—ensuring issues detected early could be resolved within timeline.
+            </p>
+        </div>
+
+        <!-- Call to Action -->
+        <div class="project-section" style="text-align: center; background: linear-gradient(135deg, rgba(177, 18, 38, 0.1), rgba(142, 14, 31, 0.1));">
+            <h2>Production Engineering Needs?</h2>
+            <p style="margin-bottom: 1.5rem;">
+                Need custom manufacturing, rapid prototyping, or production engineering expertise? Let's discuss your project requirements.
+            </p>
+            <a href="mailto:fivepullens@gmail.com" class="btn btn-primary">Get In Touch</a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Chris Pullen. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>
