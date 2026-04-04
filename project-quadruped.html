@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Quadruped Robot Dog - Chris Pullen Engineering Portfolio">
+    <title>Quadruped Robot Dog - Chris Pullen</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="nav-brand">Chris Pullen</a>
+            <ul class="nav-menu">
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#projects">Projects</a></li>
+                <li><a href="index.html#skills">Skills</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Project Hero -->
+    <section class="project-hero">
+        <div class="container">
+            <a href="index.html#projects" class="back-link"><i class="fas fa-arrow-left"></i> Back to Projects</a>
+            <div class="project-hero-content">
+                <div class="project-hero-icon">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <div>
+                    <h1>Quadruped Robot Dog</h1>
+                    <p class="project-hero-subtitle">Embedded Control & Programming Interface</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Arduino</span>
+                        <span class="tech-tag">Inverse Kinematics</span>
+                        <span class="tech-tag">Web-Based UI</span>
+                        <span class="tech-tag">C++</span>
+                        <span class="tech-tag">Embedded Systems</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Overview -->
+    <section class="section project-section">
+        <div class="container project-content">
+            <div class="project-main">
+                <h2 class="project-section-title">Overview</h2>
+                <p>
+                    This project involved designing and implementing a full embedded control platform for a quadruped robot (robot dog),
+                    including real-time motor control, inverse kinematics, predefined gait sequencing, and a browser-based programming interface.
+                    The goal was to make advanced robotics concepts accessible and interactive — enabling users to live-code robot behaviors
+                    through an intuitive, Scratch-style UI without needing deep embedded systems knowledge.
+                </p>
+                <p>
+                    The system bridges hardware and software: the robot's physical motion is governed by inverse kinematics computed on-board,
+                    while a web interface allows users to build and execute behavior sequences in real time over a local network connection.
+                </p>
+
+                <h2 class="project-section-title">Technical Details</h2>
+                <div class="detail-grid">
+                    <div class="detail-card">
+                        <h3><i class="fas fa-microchip"></i> Embedded Control</h3>
+                        <p>The robot's joints are driven by servos controlled via an Arduino-based microcontroller.
+                        The firmware handles servo PWM signals, reads joint state, and executes motion commands sent over serial or network.</p>
+                    </div>
+                    <div class="detail-card">
+                        <h3><i class="fas fa-calculator"></i> Inverse Kinematics</h3>
+                        <p>Analytical inverse kinematics are used to translate end-effector (foot) positions into joint angles for each leg independently,
+                        enabling smooth, coordinated gaits and stable stance control.</p>
+                    </div>
+                    <div class="detail-card">
+                        <h3><i class="fas fa-paw"></i> Gait Sequencing</h3>
+                        <p>Predefined gait patterns (walk, trot, etc.) are implemented as timed step sequences,
+                        with each gait phase coordinating foot lift, swing, and stance across all four legs.</p>
+                    </div>
+                    <div class="detail-card">
+                        <h3><i class="fas fa-desktop"></i> Browser-Based UI</h3>
+                        <p>A Scratch-style visual programming interface runs in the browser, allowing users to drag and drop behavior blocks,
+                        assemble sequences, and push them to the robot for live execution — no code required.</p>
+                    </div>
+                </div>
+
+                <h2 class="project-section-title">Key Challenges</h2>
+                <ul class="challenge-list">
+                    <li>Coordinating 12 servo joints in real time with minimal latency on constrained hardware</li>
+                    <li>Deriving and validating the per-leg inverse kinematics geometry for stable foot placement</li>
+                    <li>Designing a communication protocol between the browser UI and the embedded system</li>
+                    <li>Making the programming interface intuitive enough for non-engineers while remaining expressive enough for complex behaviors</li>
+                </ul>
+            </div>
+
+            <!-- Sidebar -->
+            <aside class="project-sidebar">
+                <div class="sidebar-card">
+                    <h3>Project Info</h3>
+                    <ul class="info-list">
+                        <li><span>Type</span><span>Robotics / Embedded</span></li>
+                        <li><span>Platform</span><span>Arduino</span></li>
+                        <li><span>Interface</span><span>Browser (Web UI)</span></li>
+                    </ul>
+                </div>
+                <div class="sidebar-card">
+                    <h3>Technologies</h3>
+                    <ul class="info-list stacked">
+                        <li>Arduino / C++</li>
+                        <li>Inverse Kinematics</li>
+                        <li>Servo Control (PWM)</li>
+                        <li>JavaScript (Web UI)</li>
+                        <li>Serial / Network Comms</li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+    </section>
+
+    <!-- Photo Gallery -->
+    <section class="section gallery-section">
+        <div class="container">
+            <h2 class="project-section-title">Photos & Media</h2>
+            <div class="gallery-grid">
+                <div class="gallery-placeholder">
+                    <i class="fas fa-image"></i>
+                    <p>Robot overview</p>
+                </div>
+                <div class="gallery-placeholder">
+                    <i class="fas fa-image"></i>
+                    <p>Electronics & wiring</p>
+                </div>
+                <div class="gallery-placeholder">
+                    <i class="fas fa-image"></i>
+                    <p>Browser UI screenshot</p>
+                </div>
+                <div class="gallery-placeholder">
+                    <i class="fas fa-image"></i>
+                    <p>Gait sequence demo</p>
+                </div>
+            </div>
+            <p class="gallery-note">Photos and demo videos coming soon.</p>
+        </div>
+    </section>
+
+    <!-- Back Link -->
+    <section class="section back-section">
+        <div class="container" style="text-align:center;">
+            <a href="index.html#projects" class="btn btn-primary"><i class="fas fa-arrow-left"></i> Back to All Projects</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Chris Pullen. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Camera Tracking System - Chris Pullen Engineering Portfolio">
+    <title>Camera Tracking System - Chris Pullen</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="nav-brand">Chris Pullen</a>
+            <ul class="nav-menu">
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#projects">Projects</a></li>
+                <li><a href="index.html#skills">Skills</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Project Hero -->
+    <section class="project-hero">
+        <div class="container">
+            <a href="index.html#projects" class="back-link"><i class="fas fa-arrow-left"></i> Back to Projects</a>
+            <div class="project-hero-content">
+                <div class="project-hero-icon">
+                    <i class="fas fa-camera"></i>
+                </div>
+                <div>
+                    <h1>Camera Tracking System</h1>
+                    <p class="project-hero-subtitle">Senior Design / Capstone Project</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">ROS2</span>
+                        <span class="tech-tag">OpenCV</span>
+                        <span class="tech-tag">Belt-Driven Gantry</span>
+                        <span class="tech-tag">Controls</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Overview -->
+    <section class="section project-section">
+        <div class="container project-content">
+            <div class="project-main">
+                <h2 class="project-section-title">Overview</h2>
+                <p>
+                    Developed as a senior capstone project, this system is a closed-loop automated camera tracking platform designed to
+                    capture continuous high-speed motion data across extended ranges. The system combines mechanical design,
+                    motor sizing and selection, embedded controls, and computer vision to track moving subjects with precision —
+                    without requiring manual camera operation.
+                </p>
+                <p>
+                    The platform uses a belt-driven linear gantry to move the camera along a track,
+                    with ROS2 handling inter-process communication and OpenCV providing real-time vision feedback
+                    to drive the closed-loop tracking controller.
+                </p>
+
+                <h2 class="project-section-title">Technical Details</h2>
+                <div class="detail-grid">
+                    <div class="detail-card">
+                        <h3><i class="fas fa-cogs"></i> Mechanical Design</h3>
+                        <p>The gantry uses a belt-and-pulley drive system to translate the camera carriage along a linear track.
+                        The structure was designed for rigidity and minimal backlash to support accurate positioning across the full travel range.</p>
+                    </div>
+                    <div class="detail-card">
+                        <h3><i class="fas fa-bolt"></i> Motor Sizing & Control</h3>
+                        <p>Motors were sized based on load, acceleration requirements, and target velocity.
+                        The control loop commands motor velocity in real time to keep the tracked subject centered in the camera frame.</p>
+                    </div>
+                    <div class="detail-card">
+                        <h3><i class="fas fa-eye"></i> Computer Vision (OpenCV)</h3>
+                        <p>OpenCV processes the live camera feed to detect and localize the subject within the frame.
+                        The pixel offset from center is used as the error signal fed into the tracking controller.</p>
+                    </div>
+                    <div class="detail-card">
+                        <h3><i class="fas fa-network-wired"></i> ROS2 Architecture</h3>
+                        <p>ROS2 nodes handle vision processing, control computation, and motor command publishing,
+                        providing a modular, testable software architecture that separates concerns cleanly across the pipeline.</p>
+                    </div>
+                </div>
+
+                <h2 class="project-section-title">Key Challenges</h2>
+                <ul class="challenge-list">
+                    <li>Achieving low-latency vision-to-motor response for accurate high-speed subject tracking</li>
+                    <li>Mechanically designing a rigid, low-backlash belt drive system within project constraints</li>
+                    <li>Tuning the closed-loop controller to avoid oscillation while maintaining tracking responsiveness</li>
+                    <li>Integrating mechanical, electrical, and software subsystems developed in parallel into a cohesive system</li>
+                </ul>
+            </div>
+
+            <!-- Sidebar -->
+            <aside class="project-sidebar">
+                <div class="sidebar-card">
+                    <h3>Project Info</h3>
+                    <ul class="info-list">
+                        <li><span>Type</span><span>Capstone / Research</span></li>
+                        <li><span>Framework</span><span>ROS2</span></li>
+                        <li><span>Language</span><span>Python</span></li>
+                        <li><span>Vision</span><span>OpenCV</span></li>
+                    </ul>
+                </div>
+                <div class="sidebar-card">
+                    <h3>Technologies</h3>
+                    <ul class="info-list stacked">
+                        <li>Python</li>
+                        <li>ROS2</li>
+                        <li>OpenCV</li>
+                        <li>Belt-Driven Gantry</li>
+                        <li>Closed-Loop Control</li>
+                        <li>Motor Sizing & Selection</li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+    </section>
+
+    <!-- Photo Gallery -->
+    <section class="section gallery-section">
+        <div class="container">
+            <h2 class="project-section-title">Photos & Media</h2>
+            <div class="gallery-grid">
+                <div class="gallery-placeholder">
+                    <i class="fas fa-image"></i>
+                    <p>Full system overview</p>
+                </div>
+                <div class="gallery-placeholder">
+                    <i class="fas fa-image"></i>
+                    <p>Gantry & drive mechanism</p>
+                </div>
+                <div class="gallery-placeholder">
+                    <i class="fas fa-image"></i>
+                    <p>Electronics & wiring</p>
+                </div>
+                <div class="gallery-placeholder">
+                    <i class="fas fa-image"></i>
+                    <p>Tracking demo</p>
+                </div>
+            </div>
+            <p class="gallery-note">Photos and demo videos coming soon.</p>
+        </div>
+    </section>
+
+    <!-- Back Link -->
+    <section class="section back-section">
+        <div class="container" style="text-align:center;">
+            <a href="index.html#projects" class="btn btn-primary"><i class="fas fa-arrow-left"></i> Back to All Projects</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Chris Pullen. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
