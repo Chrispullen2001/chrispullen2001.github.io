@@ -197,25 +197,34 @@ body {
 
 /* Experience Section */
 .experience {
-    background-color: var(--secondary-color);
+    background-color: var(--bg-light);
 }
 
 .experience-grid {
     display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
 }
 
 .experience-card {
     background-color: var(--bg-white);
+    border-radius: 1rem;
     padding: 2rem;
-    border-radius: 0.75rem;
-    border-left: 4px solid var(--primary-color);
     border: 1px solid var(--border-color);
     box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.experience-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.45);
 }
 
 .experience-thumb {
     width: 100%;
+    height: clamp(180px, 28vw, 280px);
+    object-fit: cover;
+    display: block;
     border-radius: 0.75rem;
     border: 1px solid var(--border-color);
     background-color: var(--bg-light);
@@ -231,9 +240,9 @@ body {
 }
 
 .experience-title {
-    color: var(--primary-color);
+    color: var(--text-primary);
     margin: 0 0 0.5rem 0;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
 }
 
 .experience-company {
