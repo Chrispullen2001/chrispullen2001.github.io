@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Coco Academy experience details - Chris Pullen">
+    <title>Coco Academy Experience | Chris Pullen</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <section class="section">
+        <div class="container">
+            <a href="../index.html#experience" class="project-link">Back to Professional Experience</a>
+            <h1 class="section-title" style="margin-top: 1.5rem;">Product Director - Coco Academy</h1>
+            <img src="../assets/photos/headshot-placeholder.svg" alt="Coco Academy experience photo placeholder" class="project-thumb" style="max-width: 720px; display: block; margin: 0 auto 1.5rem auto;">
+            <div class="project-card" style="max-width: 900px; margin: 0 auto;">
+                <h3>Role Overview</h3>
+                <p>Add your long-form summary of leadership scope, operations impact, and program outcomes here.</p>
+
+                <h3 style="margin-top: 1.5rem;">Photo Gallery</h3>
+                <p>Carousel auto-rotates. Hover over a photo to read a short description.</p>
+                <div class="experience-carousel" data-carousel>
+                    <button class="carousel-btn prev" type="button" aria-label="Previous slide">&#10094;</button>
+                    <div class="carousel-viewport">
+                        <figure class="carousel-slide active">
+                            <img src="../assets/photos/headshot-placeholder.svg" alt="Coco Academy gallery placeholder for classroom setup">
+                            <figcaption class="carousel-caption">Classroom setup and learning station layout for weekly engineering sessions.</figcaption>
+                        </figure>
+                        <figure class="carousel-slide">
+                            <img src="../assets/photos/headshot-placeholder.svg" alt="Coco Academy gallery placeholder for student activity">
+                            <figcaption class="carousel-caption">Students building and testing hands-on prototypes during guided workshop time.</figcaption>
+                        </figure>
+                        <figure class="carousel-slide">
+                            <img src="../assets/photos/headshot-placeholder.svg" alt="Coco Academy gallery placeholder for operations planning">
+                            <figcaption class="carousel-caption">Program operations overview including materials prep, staffing, and logistics.</figcaption>
+                        </figure>
+                    </div>
+                    <button class="carousel-btn next" type="button" aria-label="Next slide">&#10095;</button>
+                    <div class="carousel-dots" aria-label="Carousel navigation">
+                        <button class="carousel-dot active" type="button" aria-label="Go to slide 1"></button>
+                        <button class="carousel-dot" type="button" aria-label="Go to slide 2"></button>
+                        <button class="carousel-dot" type="button" aria-label="Go to slide 3"></button>
+                    </div>
+                </div>
+
+                <h3 style="margin-top: 1.5rem;">Documents and Links</h3>
+                <ul class="experience-list">
+                    <li><a href="#" class="project-link">Add SOP Samples</a></li>
+                    <li><a href="#" class="project-link">Add Curriculum/Training Docs</a></li>
+                    <li><a href="#" class="project-link">Add Additional Media</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const carousel = document.querySelector('[data-carousel]');
+            if (!carousel) {
+                return;
+            }
+
+            const slides = Array.from(carousel.querySelectorAll('.carousel-slide'));
+            const dots = Array.from(carousel.querySelectorAll('.carousel-dot'));
+            const prevBtn = carousel.querySelector('.carousel-btn.prev');
+            const nextBtn = carousel.querySelector('.carousel-btn.next');
+            let index = 0;
+            let timer;
+
+            function render(nextIndex) {
+                index = (nextIndex + slides.length) % slides.length;
+                slides.forEach((slide, i) => {
+                    slide.classList.toggle('active', i === index);
+                });
+                dots.forEach((dot, i) => {
+                    dot.classList.toggle('active', i === index);
+                });
+            }
+
+            function startAutoRotate() {
+                stopAutoRotate();
+                timer = window.setInterval(function () {
+                    render(index + 1);
+                }, 4500);
+            }
+
+            function stopAutoRotate() {
+                if (timer) {
+                    window.clearInterval(timer);
+                }
+            }
+
+            prevBtn.addEventListener('click', function () {
+                render(index - 1);
+            });
+
+            nextBtn.addEventListener('click', function () {
+                render(index + 1);
+            });
+
+            dots.forEach((dot, dotIndex) => {
+                dot.addEventListener('click', function () {
+                    render(dotIndex);
+                });
+            });
+
+            carousel.addEventListener('mouseenter', stopAutoRotate);
+            carousel.addEventListener('mouseleave', startAutoRotate);
+            render(0);
+            startAutoRotate();
+        });
+    </script>
+</body>
+</html>
